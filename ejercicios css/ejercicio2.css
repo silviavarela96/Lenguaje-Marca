@@ -1,0 +1,15 @@
+h2 {
+    text-align: center;
+}
+
+parrafo {
+    font-size: 60px;
+    color: violet;
+    text-decoration: overline;
+}
+
+#especial {
+    font-family: 'Times New Roman', Times, serif;
+    color:#58b193;
+    text-align: right;
+}
