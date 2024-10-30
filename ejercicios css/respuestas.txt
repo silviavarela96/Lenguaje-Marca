@@ -1,0 +1,30 @@
+----Ejercicio 1
+1.1 ¿Qué diferencias encontraste entre los tres métodos de aplicar CSS?
+En CSS en línea se coloca directamente el atributo style dentro del documento HTML entre body y /body, le veo mucho más rápido pero si se quiere dar un estilo general o muy básico. Entiendo que si se usa para un documento html más complejo podría ser más difícil que por ejemplo usar el css externo.
+Este CSS externo lo usamos directamente en otro archivo .css que lo enlazamos con el .html. Por último el CSS interno se agrega dentro del head.
+
+1.2 ¿Qué ventajas ves en usar CSS externo frente a los otros métodos?
+Una de las ventajas podría ser que al tener el código CSS en otro documento, en el código HTML podremos centranos simplemente en darle forma y no tendíamos el style dentro del código que nos podría confundirnos a la hora de usarlo en el mismo documento. 
+
+----Ejercicio 2
+2.1 ¿Por qué usarías una clase en lugar de un id?
+Class se usaría para poner el mismo estilo a varios elementos de las mismas características. Por ejemplo todos los p de mi código.
+Mientras que id se usa para estilizar un único elemento que necesita o queremos darle un estilo específico y diferente al resto.
+
+2.2 Si cambias el estilo de h2 en el CSS, ¿cómo afecta eso a otros encabezados h2 en la página?
+Me cambiarían todos los estilos de los selectores h2 que tenga.
+
+----Ejercicio 3
+3.1 ¿Qué diferencias hay entre alinear texto usando CSS y hacerlo con HTML?
+Con CSS tenemos más libertad a la hora de poner alinear texto o moverlo dentro de nuestra ventana de navegación. HTML nos da las opciones más básicas.
+
+3.2 ¿Cómo cambiarías los márgenes o el padding para mejorar el diseño de los párrafos?
+El padding o relleno controla el espacio interno entre el contenido del párrafo y su borde. En cambio, los márgenes controlan el espacio externo alrededor del elemento, creando separación entre el párrafo y otros elementos.
+Para cambiarlos y modificarlos usaría CSS externo creando etiquetas class o id.
+
+----Ejercicio 4
+4.1 ¿Por qué los selectores combinados son útiles?
+La principal ventaja sería que no tendríamos que duplicar el código, ya que se usa o aplica el mismo estilo a diferentes elementos que queramos resaltar.
+
+4.2 ¿Cómo afecta la estructura HTML a los selectores que puedes usar?
+Según la arquitectura de HTML que usemos se usarán unos selectores u otros en CSS los cuales aplicaran los estilos que definamos.

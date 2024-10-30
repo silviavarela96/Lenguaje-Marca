@@ -1,0 +1,17 @@
+/*Título alineado a la izquierda*/
+h3 {
+    text-align: left;
+    }
+    
+/* Párrafo centrado */
+    .parrafo1 {
+        /*NO OLVIDARME EL PUNTO*/
+    text-align: center;
+    background-color: #80b680;
+    }
+
+/* Párrafo alineado a la derecha */
+    #parrafo2 {
+    text-align: right;
+    background-color: #f2a1a1;
+    }

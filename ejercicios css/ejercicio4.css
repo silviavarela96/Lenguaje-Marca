@@ -1,0 +1,16 @@
+/* Selector combinado: aplica estilos solo a párrafos dentro de div*/
+
+div p {
+    color: #ff9a48;
+    font-style: oblique;
+    font-size: 28px;
+    }
+
+/* Encabezado resaltado */
+
+h3.resaltado {
+    /*No separar h3 .resaltado, ¡no funciona si tiene espacio!*/
+
+    font-style: italic;  
+    background-color: yellow;
+    }
