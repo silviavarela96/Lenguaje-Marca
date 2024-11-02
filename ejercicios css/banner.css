@@ -1,3 +1,9 @@
 #bannerpublicidad {
     position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1000;  
 }
+/*USAR EN IMG SIEMPRE UN # NO UN ·*/
