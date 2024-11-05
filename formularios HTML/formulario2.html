@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario 2</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Completar los datos</legend>
+
+        <!--Cuadro de texto con formato hora-->
+        <label for="time">Elija una hora: </label>
+        <input type="time" name="hora" id="hora"><br>
+
+        <!--Cuadro para rellenar-->
+        <textarea name="cuadro" rows="6" cols="45" id="cuadro">Escribir aquí</textarea> <br>
+
+        <!--Selector de opción-->
+        <input type="radio" name="lenguaje" id="lenguajejava">Java<br>
+        <input type="radio" name="lenguaje" id="lenguajepython">Python<br>
+        <input type="radio" name="lenguaje" id="lenguajehtml">HTML<br>
+        <input type="radio" name="lenguaje" id="lenguajevisual_basic">Visual Basic<br>
+
+        <!--Subir archivo-->
+        <label for="file">Elija un fichero: </label>
+        <input type="file" name="archivo" id="archivo"><br>
+
+        <!--Selector fecha el que muestra el calendario-->
+        <label for="date">Elija una fecha:</label>
+        <input type="date" name="fecha" id="fecha" value="dd/mm/aaaa"><br>
+
+        <!--Selector de color-->
+        <label for="color">Elija un color</label>
+        <input type="color" name="color" id="color"><br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Rellene las opciones siguientes</legend>
+        <!--Permite selecionar más de una opción-->
+        <input type="checkbox" name="procesador" id="intel" value="procesadorintel">
+        <label for="procesador">Intel</label><br>
+        <input type="checkbox" name="procesador" id="amd" value="procesadoramd">
+        <label for="procesador">AMD</label><br>
+
+        <!--Selector de hora-->
+        <label for="time">Elija una hora: </label>
+        <input type="time" name="hora" id="hora"> <br>
+
+        <!--Subir fichero-->
+        <label for="file">Elija un fichero: </label>
+        <input type="file" name="archivo" id="archivo"> <br>
+
+        <!--Permite selecionar SOLO UNA opción-->
+            <input type="radio" name="procesador" id="amd" value="procesadoramd">AMD <br>
+            <input type="radio" name="procesador" id="intel" value="procesadorintel_i5">Intel i5 <br>
+            <input type="radio" name="procesador" id="inteli7" value="procesadorintel_i7">Intel i7 <br>
+        
+        <!--Cuadro grande para rellenar con texto-->
+        <textarea name="texto" rows="4" cols="55" id="">Rellene este recuadro, por favor</textarea><br>
+    
+        <!--Cuadro para rellenar-->
+        <label for="text">DNI</label>
+        <input type="text" name="dni" id="dni"><br>
+        <label for="text">Nombre</label>
+        <input type="text" name="nombre" id="nombre"><br>
+        <label for="text">Apellidos</label>
+        <input type="text" name="apellidos" id="apellidos"><br>
+        <label for="text">Teléfono</label>
+        <input type="text" name="telefono" id="telefono"><br>
+
+    <!--Selector de color-->
+    <label for="color">Elija un color: </label>
+    <input type="color" name="color" id="color"> <br>
+    </fieldset>
+    
+</body>
+</html>
