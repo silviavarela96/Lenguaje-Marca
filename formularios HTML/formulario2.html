@@ -6,7 +6,7 @@
     <title>Formulario 2</title>
 </head>
 <body>
-    <fieldset>
+    <fieldset> <!--Se usa para saber donde empieza y termina el primer formulario-->
         <legend>Completar los datos</legend>
 
         <!--Cuadro de texto con formato hora-->
@@ -52,9 +52,9 @@
         <input type="file" name="archivo" id="archivo"> <br>
 
         <!--Permite selecionar SOLO UNA opción-->
-            <input type="radio" name="procesador" id="amd" value="procesadoramd">AMD <br>
-            <input type="radio" name="procesador" id="intel" value="procesadorintel_i5">Intel i5 <br>
-            <input type="radio" name="procesador" id="inteli7" value="procesadorintel_i7">Intel i7 <br>
+        <input type="radio" name="procesador" id="amd" value="procesadoramd">AMD <br>
+        <input type="radio" name="procesador" id="intel" value="procesadorintel_i5">Intel i5 <br>
+        <input type="radio" name="procesador" id="inteli7" value="procesadorintel_i7">Intel i7 <br>
         
         <!--Cuadro grande para rellenar con texto-->
         <textarea name="texto" rows="4" cols="55" id="">Rellene este recuadro, por favor</textarea><br>
@@ -69,10 +69,10 @@
         <label for="text">Teléfono</label>
         <input type="text" name="telefono" id="telefono"><br>
 
-    <!--Selector de color-->
-    <label for="color">Elija un color: </label>
-    <input type="color" name="color" id="color"> <br>
+        <!--Selector de color-->
+        <label for="color">Elija un color: </label>
+        <input type="color" name="color" id="color"> <br>
+
     </fieldset>
-    
 </body>
 </html>
