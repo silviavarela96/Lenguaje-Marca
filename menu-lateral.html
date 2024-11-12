@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Media Queries</title>
+
+    <style>
+        .contenedor {overflow: auto;
+        }
+        
+        #main {
+            margin-left: 4px;            
+        }
+        
+        #menulateral {
+          float: none;
+          width: auto;
+        }
+        
+        #menu {
+          margin: 0;
+          padding: 0;
+        }
+        
+        .opciones {
+          background: #96abaf;
+          border: 1px solid #ffffff;
+          border-radius: 6px;
+          list-style-type: none;
+          margin: 4px;
+          padding: 2px;
+        }
+        
+        @media screen and (min-width: 580px) {
+          #menulateral {width: 200px; float: right;}
+          #main {margin-left: 0px;}
+          body {background-color: bisque;}
+        }
+
+        @media print { /*NO ES 'PRINT' ASECAS ES 'MEDIA PRINT'*/
+            body {
+                font-family: verdana;
+                font-size: 50px; 
+                }
+            #menulateral {
+                display: none; /*OJO!!! ME FALTABA ESTA ETIQUETA PARA OCULTAR EL MENÚ*/
+                }
+    }
+        </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div id="menulateral">
+          <ul id="menu">
+            <li class="opciones"><a href="https://www.w3schools.com/" target="_blank">w3schools</a></li>
+            <li class="opciones">Aprende HTML</li>
+            <li class="opciones">Aprende CSS</li>
+            <li class="opciones">Referencia Mozilla</li>
+            <li class="opciones">Trucos CSS</li>
+          </ul>
+        </div>
+        
+        <div id="main">
+          <h1>Aprende HTML y CSS</h1>
+          <p>Redimensiona la pantalla para visualizarla en diferentes tamaños. Observa como cambia el menú para adaptarse a los diferentes tamaños de pantalla.
+            <br>Pulsa imprimir la página para ver la previsualización, observa cómo cambia la tipografía y desaparece el menú.</p>
+        </div>
+      </div>
+</body>
+</html>
