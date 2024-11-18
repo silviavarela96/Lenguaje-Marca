@@ -1,0 +1,47 @@
+-- Diseño de cajas flexibles -- 
+
+Dentro de style colocamos el nombre del contenedor o caja al que le vamos a dar un estilo diferente:
+
+    <style>
+    .nombre-contenedor {
+    display: flex;   <----------¡¡NUNCA SE PUEDE OLVIDAR EL DISPLAY!!
+    flex-direction: dirección que queremos apilar los elementos del div. Ej: row / column / row-reverse / column-reeverse
+    flex-wrap: wrap, nowrap, wrap-reverse
+    flex-flow: flex-direction y flex-wrap
+    justify-contet: alinea en el eje horizontal. Ej: flex-start / center / flex-end / space-around (elementos flexibles con espacio antes, entre y después) / space-between (espacio entre los elementos)
+    aling-items: alinea según eje vertical. Ej:  flex-start / center / flex-end / stretch (estira los elementos flexibles para llenar el contenedor) / baseline (línea imaginaria)
+    align content: alinear líneas flexibles. Ej: flex-start / center / flex-end / space-between (mismo espacio entre elementos flexibles) / space-around / stretch (estira las líneas flexibles para ocupar todo el espacio)
+    
+    }
+    </style>
+
+Colocamos un <div></div> con los elementos que queremos que estén dentro del contenedor:
+    <body>
+    <div class="nombre-contenedor">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    </div>
+    </body>
+    
+
+                                                                        CENTRADO PERFECTO
+                                                                        .nombre-contenedor {
+                                                                        display: flex;
+                                                                        height: 300px;
+                                                                        justify-content: center;
+                                                                        align-items: center;
+                                                                        }
+
+
+
+order: dar orden a los contenidos. Se usa dentro de DIV. Ej:  <div style="order: 3">Lenguaje de Marca mola</div>
+flex-grow: dimensión de una caja o elemento respecto a los demás, una será más grande que las otras. Se usa dentro de DIV. ¡¡EXAMEN!!
+        Ej: 
+    <div style="flex-grow: 1">2</div>
+    <div style="flex-grow: 8">3</div>
+
+align-self: alineacion del contenido dentro del contenedor flexible. (flex-start / center / flex-end)
+        Ej:
+    <div style="align-self: flex-start">2</div>
+    <div style="align-self: flex-end">3</div>
