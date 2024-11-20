@@ -17,33 +17,39 @@ body {
     border: 2px dashed black;
     padding: 20px;
     width: 80%;
-    height: 84%;
+    height: 84vh; /*VH*/
     margin: 0 auto; /*centra contenedor*/
-    grid-template-columns: auto auto;
-    grid-template-rows: 10% 20% auto auto 10%;
+    grid-template-rows: 10% 20% auto 10%;
+    grid-template-areas: 'cabecera cabecera' 'menu menu' 'contenido banners' 'pie pie';
 
 }
 
 .cabecera {
     background-color: lightblue;
-    grid-column: 1 / span 2;
+    line-height: 8vh;
+    grid-area: cabecera; 
 }
 
 .menu {
     background-color: lightgoldenrodyellow;
-    grid-column: 1 / span 2;
+    line-height: 15vh;
+    grid-area: menu;
+    line-height: 8vh;
 }
 
 .contenido {
     background-color: lightsalmon;
-    grid-row: 3 / span 1;
+    line-height: 50vh;
+    grid-area: contenido;
 }
 
 .banners {
     background-color: lightseagreen;
-    grid-row: 3 / span 1;
+    line-height: 50vh;
+    grid-area: banners;
 }
 
 .pie {
-    grid-column: 1 / span 2;
+    line-height: 8vh;
+    grid-area: pie;
 }
