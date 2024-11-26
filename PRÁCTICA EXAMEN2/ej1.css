@@ -1,0 +1,74 @@
+p::first-letter {
+    font-size: 1rem; /*aumenta el tamaño de la letra*/
+    font-weight: bold;
+}
+
+body {
+    font-family: open sans, helvetia, sans-serif;
+    background-color: #970043;
+
+}
+
+header {
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffd100;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #970043;
+    padding: 60px ;
+}
+
+article {
+    background-color: #f2f2f2;
+    padding: 10px;
+    width: 100%;
+    overflow: auto;
+}
+
+article:hover { /*Cambia de color cuando pasa el ratón*/
+    background-color: #970043;
+} 
+
+article a {
+    text-decoration: none;
+    color:#ffd100;
+}
+
+footer {
+    background-color: #ffd100;
+    padding: 10px;
+    border-radius: 0 0 20px 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover { /*PARA PONER OTRO COLOR CUANDO PASE EL CURSOR POR ENCIMA*/
+    color: whitesmoke;
+}
+
+img {
+    border-radius: 10px;
+    width: 100%;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: row; /*Me pone las cajas (article y aside) una al lado de la otra*/
+    align-items: center; /*alinea cajas en vertical*/
+    justify-content: center; /*alinea cajas en horizontal*/
+}
+
+@media screen and (max-width: 768px) {
+.flexbox {
+    flex-direction: column;
+}
+}
