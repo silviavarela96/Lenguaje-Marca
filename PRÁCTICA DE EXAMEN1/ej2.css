@@ -3,22 +3,34 @@ body {
     font-weight: bold;  /*todo tendrá las negritas activcadas*/
     font-size: 24px;
     font-family: open sans condensed;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgrey;
 }
 
-.formulario {
-    background-color: lightgrey;
-    border: 1px solid black; 
-    padding: 40px;
+form {
+    margin: 10px;
     width: auto; 
 }
     
 .contenedor-grid {
     display: grid;
-    background-color: #ffffff;
-    width: auto;
     grid-template-columns: 20% 80%; /*Tamaño de las dos columnas*/
-    padding: 10%;
     gap: 1em; /*huecos entre líneas*/
+    background-color: #ffffff;
+    align-content: center;
+    width: auto;
+    padding: 5px;
+    border: 1px solid black; 
+}
+
+label {
+    display: grid;   
+    text-align: right; /* Alinea el texto de los labels a la derecha */
+}
+
+input {
+    display: grid;  
 }
 
 textarea {
@@ -26,6 +38,9 @@ textarea {
     height: 150px;
 }
 
-label {
-    text-align: right;
+legend {
+    grid-column: span 2;
 }
+
+
+
