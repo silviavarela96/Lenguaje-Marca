@@ -1,8 +1,20 @@
 body {
     font-family: trebuchet, geneva, sans-serif;
-    background-image: url(bg.jpg);
-    
+    background: lightgray url(bg.jpg) no-repeat center center fixed;
+    /* -webkit-background-size: cover; Para compatibiliad en todos los navegadores */
+   /* margin: 0; No hay separación de los elementos*/
 }
+
+p::first-letter {
+    font-size: 1rem; /*aumenta el tamaño de la letra*/
+    font-weight: bold;
+    color: #4c3803;
+}
+
+article, aside, footer, header {
+    padding: 1rem;
+}
+    
 
 .contenedor {
     margin: 0 auto;
@@ -11,31 +23,35 @@ body {
     height: 84%;
 }
 
-.cabecera {
-    background-color:  lightsalmon;
+header {
+    background-color: #b28306;
+    color: #4c3803,
     border-radius: 20px;
     text-align: center;
     padding: 80px;
 }
 
 li {
-    background-color:lightgrey;
+
     display: inline; 
-    border: 5px solid #ffffff;
-    border-radius: 5px;
-
+    
 }
 
-li a {
+li a { 
     text-align: center;
-    padding: 14px 16px;
+    flex: auto;
+    padding: 5px 0px;
+    margin: 0 5px;
+    border-radius: 20px;
     text-decoration: none; /*PARA QUITARLE EL SUBRAYADO*/
-    color: orange;
+    background-color:#4c3803;
+    color:#b28306;
+
 }
 
 
-li a:hover {
-    color: red;
+li a:hover { /*PARA PONER OTRO COLOR CUANDO PASE EL CURSOR POR ENCIMA*/
+    color: whitesmoke;
   }
 
 footer a {
@@ -44,30 +60,49 @@ footer a {
 }
 
   /*FLEXBOX*/
-.menu {
+nav {
     display: flex;
-    background-color: yellow;
+    background-color: #ebcd7c;
+    border-radius: 20px;
     justify-content: center;
     
 }
 
-.cuerpo {
-    display: flex;
-}
 
-.izquierda {
-    flex: 75%;
-}
 
-.derecha {
+aside { 
     display: flex;
     flex-direction: column;
     font-size: 30px;
     text-align: center;
-    background-color: orange;
+    background-color:  #b28306;
     border-radius: 20px;
     padding: 10px;
-    flex: 25%; /*hay que poner el espacio que quiero que ocupe*/
     }
 
  /*RENPONSIVE*/
+ @media screen and (min-width: 480px){
+    body {
+        display: flex;
+        flex-direction: column;
+        margin:auto;
+        box-sizing: border-box;
+        max-width: 75rem;
+    }
+    main {
+        display: flex;
+        flex-wrap: nowrap; /*para que el aside esté a la derecha*/
+        border-bottom: 0.5 rem solid black;
+    }
+    nav, header {
+        order: -1; /*Para que suba*/
+    }
+    article {
+        flex: 75%; /*hay que poner el espacio que quiero que ocupe*/
+    }
+    aside {
+        flex: 25%; /*hay que poner el espacio que quiero que ocupe*/
+    }
+ }
+    
+ 

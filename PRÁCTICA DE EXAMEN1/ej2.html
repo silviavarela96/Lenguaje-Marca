@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crea tu personaje</title>
+    <title>Formulario</title>
     <link rel="stylesheet" href="ej2.css">
 </head>
 <body>
+    <header><h1>Crea tu personaje</h1></header>
     <form class="formulario">
-        <h1>Crea tu personaje</h1>
-        <section class="contenedor-grid">
+        
+        <section class="contenedor-grid"> <!--div-->
             <label for="text">Nombre</label>
-            <input type="text" name="nombre" id="nombre">
+            <input type="text" placeholder="Escribe el nombre">
             
             <!--Selector de una única opción-->
             <label for="text">¿Tienes poderes especiales?</label>
@@ -28,6 +29,9 @@
             <label for="email">Correo de tu tribu</label>
             <input type="email" id="email" name="email">
 
+            <label for="fecha">Fecha nacimiento</label>
+            <input type="date">
+
             <!-- Menú desplegable-->
             <label for="text">Bando</label>
             <select name="bando" id="bando">
@@ -37,7 +41,7 @@
 
             <!--Cuadro grande para rellenar con texto-->
             <label for="text">Historia del personaje</label>
-            <textarea name="texto" rows="4" cols="55" id="">Puntos débiles...</textarea>
+            <textarea name="texto" rows="4" cols="55" id="" placeholder="Puntos débiles.."></textarea>
 
             <!--Subir fichero-->
             <label for="file">Imagen</label>
