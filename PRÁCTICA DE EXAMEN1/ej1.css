@@ -1,0 +1,73 @@
+body {
+    font-family: trebuchet, geneva, sans-serif;
+    background-image: url(bg.jpg);
+    
+}
+
+.contenedor {
+    margin: 0 auto;
+    padding: 20px;
+    width: 80%;
+    height: 84%;
+}
+
+.cabecera {
+    background-color:  lightsalmon;
+    border-radius: 20px;
+    text-align: center;
+    padding: 80px;
+}
+
+li {
+    background-color:lightgrey;
+    display: inline; 
+    border: 5px solid #ffffff;
+    border-radius: 5px;
+
+}
+
+li a {
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none; /*PARA QUITARLE EL SUBRAYADO*/
+    color: orange;
+}
+
+
+li a:hover {
+    color: red;
+  }
+
+footer a {
+    text-decoration: none;
+    color:lightslategray;
+}
+
+  /*FLEXBOX*/
+.menu {
+    display: flex;
+    background-color: yellow;
+    justify-content: center;
+    
+}
+
+.cuerpo {
+    display: flex;
+}
+
+.izquierda {
+    flex: 75%;
+}
+
+.derecha {
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    text-align: center;
+    background-color: orange;
+    border-radius: 20px;
+    padding: 10px;
+    flex: 25%; /*hay que poner el espacio que quiero que ocupe*/
+    }
+
+ /*RENPONSIVE*/

@@ -1,0 +1,31 @@
+body {
+    font-variant: small-caps; /*todo tendrá las mayúsculas activcadas*/
+    font-weight: bold;  /*todo tendrá las negritas activcadas*/
+    font-size: 24px;
+    font-family: open sans condensed;
+}
+
+.formulario {
+    background-color: lightgrey;
+    border: 1px solid black; 
+    padding: 40px;
+    width: auto; 
+}
+    
+.contenedor-grid {
+    display: grid;
+    background-color: #ffffff;
+    width: auto;
+    grid-template-columns: 20% 80%; /*Tamaño de las dos columnas*/
+    padding: 10%;
+    gap: 1em; /*huecos entre líneas*/
+}
+
+textarea {
+    grid-column: span 2; /*El cuadro de texto tiene que ocupar las dos columnas*/
+    height: 150px;
+}
+
+label {
+    text-align: right;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea tu personaje</title>
+    <link rel="stylesheet" href="ej2.css">
+</head>
+<body>
+    <form class="formulario">
+        <h1>Crea tu personaje</h1>
+        <section class="contenedor-grid">
+            <label for="text">Nombre</label>
+            <input type="text" name="nombre" id="nombre">
+            
+            <!--Selector de una única opción-->
+            <label for="text">¿Tienes poderes especiales?</label>
+            <input type="radio" name="poderes" id="si" value="poderessi">SI <br>
+            <input type="radio" name="poderes" id="no" value="poderesno">NO <br>
+
+            <!--Selector de color-->
+            <label for="color">Color favorito</label>
+            <input type="color" name="color" id="color"> <br>
+
+            <label for="text">Descripción del mismo</label>
+            <input type="text" name="descripcion" id="descripcion">
+
+            <label for="email">Correo de tu tribu</label>
+            <input type="email" id="email" name="email">
+
+            <!-- Menú desplegable-->
+            <label for="text">Bando</label>
+            <select name="bando" id="bando">
+            <option value="buenos">Buenos</option>
+            <option value="malos">Malos</option>
+            </select>
+
+            <!--Cuadro grande para rellenar con texto-->
+            <label for="text">Historia del personaje</label>
+            <textarea name="texto" rows="4" cols="55" id="">Puntos débiles...</textarea>
+
+            <!--Subir fichero-->
+            <label for="file">Imagen</label>
+            <input type="file" name="archivo" id="archivo">
+        </section>
+    </form>
+</body>
+</html>
