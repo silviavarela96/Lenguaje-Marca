@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
+
 body {
     font-variant: small-caps; /*todo tendrá las mayúsculas activcadas*/
     font-weight: bold;  /*todo tendrá las negritas activcadas*/
     font-size: 24px;
-    font-family: open sans condensed;
+    font-family: 'Open Sans Condensed', Arial, Helvetica, sans-serif;
     flex-direction: column;
     align-items: center;
     background-color: lightgrey;
@@ -10,18 +12,20 @@ body {
 
 form {
     margin: 10px;
-    width: auto; 
+
+    border: 1px solid black; 
+    background-color: #ffffff;
+}
+
+fieldset {
+    border: 1px;
 }
     
 .contenedor-grid {
     display: grid;
     grid-template-columns: 20% 80%; /*Tamaño de las dos columnas*/
-    gap: 1em; /*huecos entre líneas*/
-    background-color: #ffffff;
-    align-content: center;
-    width: auto;
-    padding: 5px;
-    border: 1px solid black; 
+    grid-row-gap: 1em; /*hueco que define el espaciado vertical (entre filas)*/
+        
 }
 
 label {
@@ -29,9 +33,6 @@ label {
     text-align: right; /* Alinea el texto de los labels a la derecha */
 }
 
-input {
-    display: grid;  
-}
 
 textarea {
     grid-column: span 2; /*El cuadro de texto tiene que ocupar las dos columnas*/
@@ -40,6 +41,10 @@ textarea {
 
 legend {
     grid-column: span 2;
+}
+
+label[for="name"]::after {
+    content: ':';
 }
 
 
