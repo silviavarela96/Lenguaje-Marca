@@ -3,10 +3,15 @@ p::first-letter {
     font-weight: bold;
 }
 
+/*todos los elementos se ajustan al borde y siempre tienen la misma dimensión*/
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: open sans, helvetia, sans-serif;
     background-color: #970043;
-
+    height:100vh; /*para que ocupe todo el alto*/
 }
 
 header {
@@ -22,6 +27,7 @@ aside {
     justify-content: flex-start;
     background-color: #970043;
     padding: 60px ;
+    /*max-width: 100%;*/    
 }
 
 article {
@@ -29,10 +35,13 @@ article {
     padding: 10px;
     width: 100%;
     overflow: auto;
+    /*flex: 2;*/
 }
 
 article:hover { /*Cambia de color cuando pasa el ratón*/
     background-color: #970043;
+    color:#f2f2f2; 
+
 } 
 
 article a {
@@ -43,6 +52,7 @@ article a {
 footer {
     background-color: #ffd100;
     padding: 10px;
+    text-align: center;
     border-radius: 0 0 20px 20px;
 }
 
@@ -55,14 +65,19 @@ a:hover { /*PARA PONER OTRO COLOR CUANDO PASE EL CURSOR POR ENCIMA*/
     color: whitesmoke;
 }
 
+a {
+    cursor: help; /*Cambia el cursor*/
+}
+
 img {
     border-radius: 10px;
-    width: 100%;
+    width: 100%; 
+    
 }
 
 .flexbox {
     display: flex;
-    flex-direction: row; /*Me pone las cajas (article y aside) una al lado de la otra*/
+    flex-direction: row; /*Me pone las cajas (article y aside) una al lado de la otra, en fila*/
     align-items: center; /*alinea cajas en vertical*/
     justify-content: center; /*alinea cajas en horizontal*/
 }
