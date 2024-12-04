@@ -1,0 +1,76 @@
+p::first-letter {
+    font-size: 1rem; /*aumenta el tamaño de la letra*/
+    font-weight: bold;
+    color: darkgray;
+}
+
+a {
+    cursor: progress; /*Cambia el cursor*/
+}
+
+header, nav, section, footer {
+    padding: 20px;
+    margin: 20px;
+    border: solid 2px whitesmoke;
+    border-radius: 10px;
+    color: white;
+}
+
+header {
+    background-color: darkgray;
+    text-align: center;
+}
+
+section {
+    background-color: darkolivegreen;
+}
+
+img {
+    border-radius: 2vh;
+    border-color: goldenrod;
+    border: 5px;
+    max-width: 90%;
+    margin-top: auto;
+    margin-right: auto;
+}
+
+footer {
+    background-color: darkgoldenrod;
+    text-align: center;
+}
+
+nav{
+    background-color: darkcyan;
+    width: 15em;
+}
+
+ul{
+    list-style-type: none;
+}
+
+nav a {
+    padding: 0.5em 1em;
+    color: white;
+    border-color: rgba(255,255,255,0.3);
+    text-decoration: none; /*quitar la decoración de los enlaces*/
+    border-bottom: 1px solid #555;
+    
+}
+
+.wrapper {
+    display: flex; 
+}
+
+@media screen and (max-width: 640px) {
+    .wrapper {
+        flex-direction: column;
+    }
+    }
+
+@media print { 
+    body {
+        font-family: verdana;
+            }
+    nav {
+        display: none; /*desaparace el menú al imprimir*/
+            }
