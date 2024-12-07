@@ -31,7 +31,7 @@ section {
 }
 
 img {
-    float: left;
+    float: left; /*la imagen está a la izquierda del texto*/
     margin-top: 1.1vw;
     margin-right:2vw;
     border-radius: 2vh;
@@ -64,13 +64,12 @@ nav a {
     text-decoration: none; /*quitar la decoración de los enlaces*/
     border-bottom: 1px solid #555;
     cursor: progress; /*Cambia el cursor*/
-    
+    display: block;
 }
 
 .wrapper {
+    flex: 1 1 auto; /*dimensión de una caja o elemento respecto a los demás*/
     display: flex; 
-    flex: 1 1 auto;
-    display: block;
 }
 
 @media screen and (max-width: 640px) {
@@ -82,7 +81,7 @@ nav a {
     }
     }
 
-@media print { 
+@media print {  /*ESTILO QUE CAMBIA EN LA OPCIÓN IMPRIMIR*/
     body {
         font-family: verdana;
             }
@@ -90,4 +89,5 @@ nav a {
         display: none; /*desaparace el menú al imprimir*/
         width: auto;
         order: 0;
-            }
+        }
+}
