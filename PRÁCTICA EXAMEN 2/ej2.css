@@ -11,49 +11,32 @@ body{
   /* Nuestro contenedor */
 .contenedor-principal {
     max-width: 1170px; /* Ancho fijo que tendrá como máximo */
-    /* Centramos la caja */
     margin-left: auto;
     margin-right: auto;
-
-    /*relleno del documento*/
-    padding: 1em;
+    padding: 1em;/*relleno del documento*/
   }
 
-  /* Afectará al estilo de los contactos
-  Márgenes a 0 para los elementos h3 y ul 
-  Aparecerán uno encima de otro */
-h3,
-ul {
+  /* margin=0 para los elementos h3 y ul aparecerán uno encima de otro */
+h3,ul {
   margin: 0;
 }
 
 h3 {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
   } /*separación*/
 
 
-/* Cuando el usuario ponga el foco sobre cualquier
-entrada del formulario la resalto en gold */
-input:focus,
-textarea:focus {
+/*cambia los campos a editar del formulario cuando se pulsa*/
+input:focus, textarea:focus {
   outline: 3px solid gold;
 }
 
-/* Estilo predeterminado para los
-elementos de entrada del formulario y
-el botón */
-input,
-textarea,
-button {
+/*elemtos del formulario con estilo específico*/
+input, textarea, button {
   width: 100%;
   border: 1px solid #000;
 }
 
-/* Defino una sombra para nuestro
-envoltorio */
-.contenedor2 {
-  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
-}
 
 /* Todos los elementos que se encuentren
 dentro del envoltorio tendrán un mismo
@@ -63,20 +46,62 @@ relleno de 1em */
   }
 
   ul {
-    list-style: none; /* Elimino los puntos */
+    list-style: none; /*se eliminan los puntos*/
     padding: 0;
   }
 
-  /* Los contactos tienen un color blanco
-sobre fondo con tono verde */
-.contenedor2 {
+/*estilo específico del menú izquierdo*/
+.menu {
     background: rgb(11, 76, 26);;
     color: #fff;
   }
 
-  /* Estilo de la clase que contiene
-tanto el formulario como el encabezado */
 .form {
-    background: #fff;
+  background: #fff;
+}
+
+form {
+  display: grid; /*elemento flexible, cuando se hace la pantalla pequeña tiene que bajar y colocarse en columna*/
+  grid-template-columns: 1fr 1fr; /*mismo espacio para las dos columnas*/
+  grid-gap: 20px; /*espacio entre elementos*/
+}
+
+form label {
+  display: block;
+} /*coloca los elementos del formulario en columna*/
+
+
+/*el botón y el textarea tiene que extenderse*/
+.boton , .mensaje {
+  grid-column: 1 / 3;
+}
+
+button {
+  background: rgb(11, 76, 26);
+  color: #fff;
+  width: 100%;
+}
+
+/*cuando paso el cursor sobre el botón*/
+button:hover, button:focus {
+  background: rgb(11, 76, 26, 0.8);
+}
+
+/*FORMATO RESPONSIVO: este estilo será cuando la ventana sea GRANDE*/
+
+@media (min-width: 700px) {
+  .contenedor2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /*la parte derecha ocupa el doble*/
   }
+
+  .contenedor2 > * {
+    padding: 2em 2em;
+  }
+
+  .contenedor-principal {
+    padding: 0; /*se elimina relleno*/
+  }
+}
+
   
