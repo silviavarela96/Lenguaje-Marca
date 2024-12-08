@@ -1,0 +1,54 @@
+body {
+    color: black;
+    font-size: 200%;
+    background: url(bg.jpg) no-repeat center center fixed;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center; /*centrados en el eje horizontal*/
+    flex-wrap: wrap; /*los elementos hijos siempre están en la misma línea*/
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+ /*BOTÓN ENVIAR*/
+button {
+    position: relative;
+    flex: 1 1 100px; /*disposición del elemento dentro del contenedor felxible*/
+    margin: 10px;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #3759e2;
+    color: #fff;
+    box-shadow: 8px 8px 8px rgb(226, 209, 12, 0.35);
+    cursor: pointer;
+    }
+
+button:hover, button:focus {
+    box-shadow: none;
+} 
+
+
+/*ENTRADAS DEL FORMULARIO*/
+.entrada1, .entrada2 {
+    margin: 10px;
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #E6E6E6;
+    flex: 1 1 300px;
+}
+
+.entrada1:hover, .entrada2:hover, .entrada1:focus, .entrada2:focus{
+    outline: 5px solid #3759e2;
+}
+
+input::placeholder { /*hay que poner input::*/
+    font-size: 200%;
+}
+
