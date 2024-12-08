@@ -1,0 +1,119 @@
+body {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+background-color: #eee;
+color: #434344;
+font-family: "Poppins", sans-serif; 
+font-weight: 300; /*peso de la tipografía*/
+text-align: justify;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&family=Ubuntu&display=swap');
+
+/*PROPIEDADES DEL CONTENEODR GRID*/
+.contenedor {
+    display:grid;
+    max-width: 850px; /*anchura máxima del contenedor*/
+    grid-template-columns: 1fr 3fr; /*tamaño de las columnas*/
+    grid-template-areas:
+    "cabecera cabecera"
+    "lateral centro"
+    "pie pie"; /*LE DOY NOMBRE A LAS ÁREAS Y LAS COLOCO ESQUEMÁTICAMENTE EN LA CUADRÍCULA*/
+    grid-gap: 50px; /*hueco entre los elementos del contenedor*/
+    background-color: #fff;
+    padding: 0 60px; /*relleno lateral*/
+    margin: 0 auto;     
+}
+
+a {
+    color: #434344;
+    text-decoration: none;
+}
+
+
+/*CABECERA*/
+header {
+    display: grid;
+    grid-area: cabecera;
+    grid-template-columns: 1fr 1fr; /*columnas del mismo ancho*/
+    color: #908d8d;
+    padding: 20px 0; /*superior e inferior*/
+    border-bottom: 5px dashed;
+    border-color: #0d6427;
+    text-transform: uppercase; /*se rellena en mayúsculas automáticamente*/
+}
+
+/*elementos separados de la barra de navegación superior*/
+header nav li {
+    margin-right: 15px;
+    display: inline-block; /*los pone uno al lado del otro*/
+}
+
+button {
+    background: #0d6427;
+    border-radius: 1.25em;
+    float: inline-end; /*se coloca a la derecha*/
+    border: 0;
+    cursor: pointer; /*cambia el cursor a una mano*/
+}
+
+/*CENTRAL: TEXTO E IMAGEN*/
+.centro {
+    grid-area:centro ;
+}
+
+img {
+    border-radius: 30px;
+    width: 100%;
+}
+
+h2 {
+    color: #ada70a;
+    font-size: 32px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+/*BARRA LATERAL*/
+.barra-lateral {
+    grid-area: lateral;
+    border-top: solid 3px #0d6427;
+    padding: 20px; /*relleno*/
+    background-color: #f9f9f9;
+    text-decoration: none;
+    
+}
+
+ul {
+    list-style: none; /*elimina los puntos de la lista*/
+}
+.barra-lateral ul {
+    margin-top: 1rem;
+}
+
+/*PIE DE PÁGINA*/
+footer {
+    grid-area: pie;
+    background-color: #0d6427;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    color:#f9f9f9
+}
+footer a {
+    color: inherit;
+}
+
+/*RESPONSIVO*/
+@media (max-width: 760px) { /*cuando la pantalla se pone pequeña toma estos valores*/
+    .contenedor{
+        grid-template-columns: 1fr;
+        grid-template-areas: "cabecera" "centro" "lateral" "pie";
+    }
+}
+
