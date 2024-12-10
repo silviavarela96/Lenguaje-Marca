@@ -1,0 +1,87 @@
+body {
+    font-family: "Roboto", sans-serif;
+    color: #333;
+    background-image: linear-gradient(to right,#6d83f2, #bad4f3);
+    display: flex;
+    align-items: center;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ /*PROPIEDADES CONTENEDOR GRID*/
+.contenedor-principal {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: ;
+    max-width: 600px;
+    width: 90%;
+    padding: 2.5rem;
+    grid-column: 1fr 1fr;
+    grid-gap: 1rem; /*hueco*/
+
+}
+
+ @import url (https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+ .formulario {
+    display: grid;
+    grid-area: formulario;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "header header"
+    "formulario formulario"
+    "botones botones";
+
+    
+}
+
+/*CABECERA*/
+header {
+    grid-area: header;
+    display: grid;
+    color: #444;
+    text-align: center;
+    border-bottom: 2px #ccc;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700; /*peso de la fuente*/
+}
+
+/*BOTONES*/
+button {
+    grid-area: botones;
+    border-radius: 5px;
+    background-color: #6d83f2;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding:0.75rem;
+
+}
+
+.botones {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem; /*hueco entre elementos*/
+}
+
+/*RESPONSIVO*/
+@media (max-width: 768px) { /*cuando la pantalla se pone pequeña toma estos valores*/
+    .contenedor-principal{
+        grid-template-columns: 1fr;
+    
+    }
+
+    .button  {
+        grid: column;
+    }
+}
+

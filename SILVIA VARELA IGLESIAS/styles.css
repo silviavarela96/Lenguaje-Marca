@@ -1,0 +1,106 @@
+body {
+ font-family: Poppins, sans-serif;
+ max-height:100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*CONTENDOR FLEX*/
+.flexbox {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; /*alinea cajas en vertical*/
+    justify-content: center; /*alinea cajas en horizontal*/
+    
+}
+
+h1, h2 {
+    font-family: Lora;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+ /*ENCABEZADO*/
+header {
+    text-align: center;
+    color: white;
+    background-color: #4CAF50;
+    position:fixed ;
+}
+
+/*BARRA NAVEGACIÓN*/
+nav {
+    position: sticky; 
+    
+
+}
+
+nav a {
+    text-decoration: none; /*quitar la decoración de los enlaces*/
+    text-align: center;
+    background-color: #222;
+    padding: 0.5rem 1rem;
+    display: inline;
+}
+
+nav:hover {
+    color:rgb(221, 233, 156) ;
+
+}
+
+ul {
+    list-style-type: none; /*para que los coloque linealmente*/
+}
+
+li {
+    display: inline;
+  }
+
+ /*IMAGEN*/
+ img {
+    width: 800px;
+    height: 300px;
+ }
+
+aside {
+    width: 200px;
+    background-color: #4CAF50;
+    border-radius: 20px;
+}
+
+p::first-letter {
+    font-size: 1rem; /*aumenta el tamaño de la letra*/
+    font-weight: bold;
+    color: rgb(156, 122, 59);
+}
+
+/*PIE DE PÁGINA*/
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+
+}
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+footer:hover { 
+text-decoration: overline;
+    }
+
+/*MEDIA*/
+@media screen and (max-width: 768px) {
+    img {
+        flex-direction: column;
+        order: 2;
+    }
+    header {
+     display: none;   
+    }
+    }
