@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 7</title>
+</head>
+<body>
+    <h1>Sintaxis de JavaScript</h1>
+    <p>Creación de una variable y visualización en pantalla</p>
+    <p id="parrafo"></p>
+
+    <script> //Aquí va a estar el programa
+
+        var cadena = "Esto es una cadena";
+        document.getElementById('parrafo').innerHTML = cadena; /*En el párrafo vacío le pone ''esto es una cadena''*/
+        //La parte derecha 'cadena' se asigna a la izquierda al 'párrafo'
+
+        let numero = 10, y = -4.2; 
+        let x = 5.8;
+            alert(x+y); //Hace la suma en una pantalla emergente
+
+        let cadena2="La suma es:";
+            alert(cadena2+x+y); //El operador + aplicado a cadena CONCATENA las 3 cadenas, no hace el resultado de la suma.
+
+        document.write(numero); //escribe al FINAL del documento 
+
+    </script>
+</body>
+</html>
