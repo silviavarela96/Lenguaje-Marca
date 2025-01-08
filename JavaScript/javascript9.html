@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 9: FORMULARIOS</title>
+</head>
+<body> 
+    <h1>Escribe tu nombre</h1>
+    <input type="text" id="entradaTexto"> <!--Caja de texto-->
+    <button onclick="saludo()">Saludar</button> <!--El identificador 'saludo' va a usar el script. OJO SIEMPRE ()-->
+    
+    <script> /*Cuando haces clic sale mensaje de Hola Silvia*/
+        function saludo() { 
+        var nombre = document.getElementById("entradaTexto").value;
+        alert("Hola " + nombre); /*Hay que poner un espacio después de Hola para que no aparezca junto*/
+    }
+    </script>
+</body>
+</html>
