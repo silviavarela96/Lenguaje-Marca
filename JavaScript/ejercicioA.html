@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio A JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+    <h1>Escribe tu nombre y contraseña</h1>
+    <input type="text" id="nombre" placeholder="Tu nombre"> 
+    <input type="password" id="contraseña" placeholder="Tu contraseña">
+    <button onclick="saludo()">Entrar</button> 
+    
+    <script> /*Cuando haces clic sale este mensaje*/
+        function saludo() { 
+            let nombre = document.getElementById('nombre').value;
+            let contraseña = document.getElementById('contraseña').value;
+            let mensaje = `Hola ${nombre} con la contraseña ${contraseña}`;
+            document.getElementById('mensaje').textContent = mensaje;
+                }
+    </script>
+</body>
+</html>
