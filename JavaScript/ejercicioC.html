@@ -6,15 +6,27 @@
     <title>Ejercicio C JavaScript</title>
 </head>
 <body>
-    <h1>Conversor de grados Celsius a grados Fahrenheit</h1>
+        <h1>Conversor de grados Celsius a grados Fahrenheit</h1>
 
-        <input type="number" id="dato" placeholder="Introduce un dato">
+        <input type="text" id="dato" placeholder="Introduce un dato"> <!---No se pone type number-->
         <button onclick="celsius()">Convertir a celsius</button>
         <button onclick="fah()">Convertir a Fahrenheit</button>
 
-        <input type="number" id="resultado" placeholder="Resultado">
+        <p id="resultado"></p>
         
     <script>
+        
+        function celsius(){
+            let grados = parseFloat(document.getElementById("dato").value); //Importante el paréntesis ()
+            let resultado = (grados-32)/1.8;
+            document.getElementById("resultado").innerHTML = "Tu resultado es " + resultado;
+        }
+
+        function fah(){ //Se puede usar let o var
+            let grados = parseFloat(document.getElementById("dato").value); //PARSEFLOAT PARA QUE SÓLO ADMITA NÚMEROS
+            let resultado = grados * (9/5) + 32;
+            document.getElementById("resultado").innerHTML = "Tu resultado es " + resultado;
+        }
 
     </script>
 </body>
