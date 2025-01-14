@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula tu IMC Corporal</title>
+
+</head>
+<body>
+    <h1>Calcula tu IMC</h1>
+    <input class="text" id="peso" placeholder="Introduce tu peso">
+    <input class="text" id="altura" placeholder="Introduce tu altura">
+    <button onclick="calcular()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcular(){
+            let peso = parseFloat(document.getElementById("peso").value); //OJO CON LOS ""
+            let altura = parseFloat(document.getElementById("altura").value);
+            let resultado = peso/(altura*altura);
+
+            if (isNaN(resultado)) { 
+                document.getElementById("resultado").innerHTML = "¡Datos incorrectos!";
+            }
+
+            else {
+                document.getElementById("resultado").innerHTML = "Tu IMC es " + resultado;
+            }
+        }
+    </script>
+    
+</body>
+</html>
