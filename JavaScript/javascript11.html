@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable local</title>
+</head>
+<body>
+    <button onclick="variableLocal()">Prueba</button>
+
+    <p id="dentro"></p>
+
+    <script>
+        alert("Fuera de la funcion la cariable local a no existe " + a) 
+        // Mira el inspector de código, consola
+
+        function variableLocal() {
+        var a;
+        a = 44;
+        document.getElementById("dentro").innerHTML = "Dentro de la función vale " + a;
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10. Alcance de una variable</title>
+</head>
+<body>
+    <p>Variable global</p>
+    <button onclick="suma()">Sumar</button>
+    <button onclick="resta()">Restar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        var numero = 1; //Afecta a todas las funciones al ser GLOBAL
+        document.getElementById("resultado").innerHTML = numero;
+
+        function suma() {
+            numero = numero + 1;
+            document.getElementById("resultado").innerHTML = numero;
+        }
+
+        function resta() {
+            numero = numero - 1;
+            document.getElementById("resultado").innerHTML = numero;
+        }
+
+    </script>
+</body>
+</html>
