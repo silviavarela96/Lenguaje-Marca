@@ -32,18 +32,21 @@
         <button onclick="convertirDolares()">Convertir a Dolares</button>
         <button onclick="convertirEuros()">Convertir a Euros</button>
 
-        <input type="number" id="resultado" placeholder="Resultado">
+        <p id="resultado"></p>
     </div>
    
     <script>
-        const conversionRate = 0.94;  // 1 USD = 0.94 EUR
-
+          
         function convertirDolares() {
-            
+            let importe = parseFloat(document.getElementById("cantidad").value); //Importante el paréntesis ()
+            let resultado = //PONER LA FORMULA 1 USD = 0.94 EUR
+            document.getElementById("resultado").innerHTML = "Tu resultado es " + resultado;
         }
 
         function convertirEuros() {
-            
+            let importe = parseFloat(document.getElementById("cantidad").value); //Importante el paréntesis ()
+            let resultado = //PONER LA FORMULA 1 EUR = 1.03 USD
+            document.getElementById("resultado").innerHTML = "Tu resultado es " + resultado;
         }
     </script>
 
