@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1. Área círculo</title>
+    <style>
+        .circulo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: lightcoral;
+            margin-bottom: 2%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcula el área del círculo:</h1>
+    <div class="circulo"></div>
+    <input type="text" id="radio" placeholder="Pon el radio de tu círculo">
+    <button onclick="calcular()">Calcular Área</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            let area = parseFloat(document.getElementById("radio").value);
+            let resultado = Math.PI * radio * radio;   
+
+            if (isNaN(resultado)) { 
+                document.getElementById("resultado").innerHTML = "¡Imposible calcular, pon un número!";
+            }
+
+            else {
+            document.getElementById("resultado").innerHTML = "El área es: " + resultado;
+            }
+            
+        }
+    </script>
+</body>
+</html>
