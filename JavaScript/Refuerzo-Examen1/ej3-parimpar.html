@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3. Número impar o par</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: lightseagreen;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input {
+            border: 3px solid peru;
+            border-radius: 2px;
+            padding: 10px;
+            font-size: 12px;
+        }
+
+        button {
+            background-color: grey;
+            color: aliceblue;
+            font-size: 15px;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verifica si tu código de usuario es impar o par:</h1>
+    <input type="text" id="numero" placeholder="Introduce tu usuario">
+    <button onclick="verificar()">Verifica tu número</button>
+    <p id="resultado"></p>
+
+    <script>
+        function verificar(){
+            let numero = parseFloat(document.getElementById("numero").value);
+            let resultado = numero;
+
+            if (numero % 2 === 0) { 
+                document.getElementById("resultado").innerHTML = "¡Esto es un número PAR!";
+            }
+
+            else {
+                document.getElementById("resultado").innerHTML = "¡Esto es un número IMPAR!";
+            }
+
+            if (isNaN(resultado)) {
+                document.getElementById("resultado").innerHTML = "Los códigos no admiten letras.";
+            }
+
+        }
+    </script>
+</body>
+</html>
