@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Introduce tus notas de 1º de ASIR del IES Antonio Machado</h1>
+    <input type="text" id="lm" placeholder="Lenguaje de Marca">
+    <input type="text" id="bbdd" placeholder="Base de Datos">
+    <input type="text" id="redes" placeholder="Redes">
+    <input type="text" id="iso" placeholder="Sistemas Operativos">
+    <input type="text" id="hardware" placeholder="Fundamentos Hardware">
+
+    <button onclick="notas()">Ver notas módulos</button>
+    <button onclick="media()">Ver nota media</button>
+
+    <p id="resultado"></p>
+
+    <script>
+    
+        function media(){
+            let nota1 = parseFloat(document.getElementById("lm").value);
+            let nota2 = parseFloat(document.getElementById("bbdd").value);
+            let nota3 = parseFloat(document.getElementById("redes").value);
+            let nota4 = parseFloat(document.getElementById("iso").value);
+            let nota5 = parseFloat(document.getElementById("hardware").value);
+
+            let resultado = (nota1+ nota2+ nota3+ nota4+ nota5) / 5;
+            document.getElementById('resultado').innerHTML = resultado;
+
+        }
+
+        // function notas() {
+        //    let nota1 = parseFloat(document.getElementById("lm").value);
+        //    let nota2 = parseFloat(document.getElementById("bbdd").value);
+        //    let nota3 = parseFloat(document.getElementById("redes").value);
+        //    let nota4 = parseFloat(document.getElementById("iso").value);
+        //    let nota5 = parseFloat(document.getElementById("hardware").value);
+
+        //    let aprobados = nota1 nota2 nota3 nota4 nota5 >= 5;
+        //    let suspensos = nota1, nota2, nota3, nota4, nota5, < 5;
+
+        //   document.getElementById("resultado").innerHTML = "Tienes aprobados: " + aprobados "Tienes suspensos: " + suspensos;
+        //}
+
+    </script>
+</body>
+</html>
