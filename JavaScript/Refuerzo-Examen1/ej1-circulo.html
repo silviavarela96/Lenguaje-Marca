@@ -23,10 +23,10 @@
 
     <script>
         function calcular() {
-            let area = parseFloat(document.getElementById("radio").value);
+            let radio = parseFloat(document.getElementById("radio").value);
             let resultado = Math.PI * radio * radio;   
 
-            if (isNaN(resultado)) { 
+            if (isNaN(radio)) { 
                 document.getElementById("resultado").innerHTML = "¡Imposible calcular, pon un número!";
             }
 
