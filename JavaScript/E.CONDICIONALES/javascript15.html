@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructuras Condicionales. Adivinar número</title>
+</head>
+<body>
+    <h1>Adivina un número</h1>
+    <p>He pensado un número entero del 1 al 100...</p>
+    <input type="text" id="numero" placeholder="Introduce un número">
+    <button onclick="adivinar()">Adivinar</button>
+
+    <p id="resultado"></p>
+    <p id="intentos"></p>
+
+    <script>
+        var numero=33; //Si quiere número aleatorio = Math.floor(Math.ramdom()*100)+1
+        var intentos=0;
+
+        function adivinar() {
+          var entrada = parseInt(document.getElementById("numero").value);
+          if(entrada==numero){
+            document.getElementById("resultado").innerHTML = "¡Has acertado!";
+            document.getElementById("intentos").innerHTML = "Has necesitado " + intentos + " intentos";
+          }  
+
+          else if (entrada<numero){
+            document.getElementById("resultado").innerHTML = "El número es mayor";
+            intentos++; // intentos = intentos +1
+          }
+
+          else {
+            document.getElementById("resultado").innerHTML = "El número es menor";
+            intentos++;
+          }
+        }
+        
+    </script>
+</body>
+</html>
