@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3.Gestor Arrays</title>
+</head>
+<body>
+    <h1>Añade elementos numéricos</h1>
+    <input type="text" id="numero" placeholder="Añade un número">
+    <p id="resultado"></p>
+    <button onclick="añadir()">Añadir</button>
+    <button onclick="ordenar()">Ordenar</button>
+    <button onclick="calcular()">Calcular media</button>
+
+    <script>
+        let array = [];
+
+        function añadir(){
+            let numero = document.getElementById("numero").value;
+            let resultado = document.getElementById("resultado");
+            array.push(numero);
+            resultado.innerHTML = array;
+
+            if (isNaN(numero)) {
+                resultado.innerHTML = "¡Introduce un número válido!";
+            }
+        }
+
+        function ordenar(){
+            let resultado = document.getElementById("resultado");
+            array.sort((a, b) => a - b); //para que ordene los número
+            resultado.innerHTML = "Te he ordenado los números: " + array;
+        }
+
+        function calcular(){  //¡NO FUNCIONA!
+            let suma = array.reduce(); //para que calcule la suma 
+            let media = suma / array.length;
+            document.getElementById("resultado").innerHTML = "Esta es la media aritmética: " + media;
+        }
+       
+    </script>
+</body>
+</html>
