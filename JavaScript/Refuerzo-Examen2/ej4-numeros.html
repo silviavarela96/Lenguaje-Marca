@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercio 4. Lista números</title>
+</head>
+<body>
+    <h1>Gestiona una lista de números</h1>
+    <input type="text" id="numero" placeholder="Añade un número">
+    <p id="resultado"></p>
+    <button onclick="añadir()">Añadir</button>
+    <button onclick="suma()">Calcular la suma</button>
+    <button onclick="grande()">Número más grande</button>
+    <button onclick="pequeño()">Número más pequeño</button>
+    <button onclick="posicion()">Posición</button>
+    <button onclick="lista()">Mostrar lista</button>
+
+    <script>
+    let array = [];
+
+        function añadir(){
+            let numero = document.getElementById("numero").value;
+            let resultado = document.getElementById("resultado");
+            array.push(numero);
+            resultado.innerHTML = array; 
+        }
+
+        function suma(){ //ERROR
+            let suma = array.reduce();
+            let resultado = document.getElementById("resultado").innerHTML
+            resultado.innerHTML = "La suma total es: " + suma;
+        }
+
+        function grande(){
+            let maximo = Math.max(...array);
+            resultado.innerHTML = "El número más grande es " + maximo;
+
+        }
+
+        function pequeño(){
+            let minimo = Math.min(...array);
+            resultado.innerHTML = "El número más pequeño es " + minimo;
+        }
+
+        function posicion(){ //ERROR
+            // Apuntes: indexOf(e) Devuelve el índice que ocupa el elemento e en el array. Si sale -1 no existe en la lista
+            let numero = parseFloat(document.getElementById("numero").value);
+            let posicion = array.indexOf(numero);
+
+                if (posicion = -1) {
+                    resultado.innerHTML = "Este número no está en la lista.";
+                }
+                else { 
+                    resultado.innerHTML = "Este número es la posición " + posicion + " de tu lista."
+                }
+        }
+
+        function lista(){
+            let resultado = document.getElementById("resultado");
+            resultado.innerHTML = array;
+        }
+
+    </script>
+</body>
+</html>
