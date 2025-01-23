@@ -13,11 +13,9 @@
 
     <script>
         function calcular(){
-            let numero = parseFloat(document.getElementById("numero").value);
-            let resultado = numero --------- ;
-
-            document.getElementById("resultado").innerHTML = "Tu número tiene " + resultado+ "cifras";
-
+            let numero = (document.getElementById("numero").value); //No hay que poner parseFloat para que no convierta en número.
+            let resultado = numero.length ;
+            document.getElementById("resultado").innerHTML = "Tu número tiene " + resultado + " cifras";
         }
     </script>
 </body>
