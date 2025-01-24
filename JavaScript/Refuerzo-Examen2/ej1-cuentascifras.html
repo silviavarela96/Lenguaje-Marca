@@ -10,11 +10,11 @@
     <input type="text" id="numero" placeholder="Introduce un número"> 
     <button onclick="calcular()">Calcular</button>
     <p id="resultado"></p>
-
+ 
     <script>
         function calcular(){
             let numero = (document.getElementById("numero").value); //No hay que poner parseFloat para que no convierta en número.
-            let resultado = numero.length ;
+            let resultado = numero.length ; //Si usas if isNaN hay que poner numero.toString().lenght
             document.getElementById("resultado").innerHTML = "Tu número tiene " + resultado + " cifras";
         }
     </script>
