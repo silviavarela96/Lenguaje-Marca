@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej 1 Tema 2</title>
+</head>
+<body>
+    <h1>Aciertos y errores</h1>
+    <p>Escribir un sencillo programa que haga un examen con cinco preguntas
+        sobre JavaScript. Calcular los aciertos y los errores del usuario. Mostrar los
+        resultados y un comentario en función del resultado.</p>
+<form>
+    <p>1. ¿Quién es el profe de LM?</p>
+    <input type="radio" name="pregunta1" value="correcta"> José Luis
+    <input type="radio" name="pregunta1" value="incorrecta"> José Carlos
+    <input type="radio" name="pregunta1" value="incorrecta"> Rocío
+
+    <p>2. ¿Qué llevamos visto en el curso?</p>
+    <input type="radio" name="pregunta2" value="correcta"> JavaScript
+    <input type="radio" name="pregunta2" value="incorrecta"> Python
+    <input type="radio" name="pregunta2" value="incorrecta"> PHP
+
+    <button onclick="resultado">Correguir</button>
+
+    <p id="resultados"></p>
+
+    <script>
+        function resultado() {
+            let correcta = parseInt(document.getElementById("correcta").value);
+            let incorrecta = parseInt(document.getElementById("incorrecta").value);
+
+            if (pregunta1.value=="correcta"){
+                document.getElementById("resultados").innerHTML = "Has aprobado"
+            }
+            
+            if (pregunta1.value=="correcta"){
+                document.getElementById("resultados").innerHTML = "Has aprobado"
+            }
+            
+
+            else (pregunta1.value="incorrecta"){
+                document.getElementById("resultados").innerHTML = "Has suspendido"
+            }
+        }
+    </script>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números aleatorios</title>
+</head>
+<body>
+    <h1>Generar números aleatorios</h1>
+    <p>Genera 10 números aleatorios que estén entre 0 y 20.</p>
+    <p>Siempre son números enteros.</p>
+    <button onclick="aleatorio()">Generar</button>
+    <p id="resultado"></p>
+    
+    <script>
+     
+var numero=Math.floor(Math.ramdom()*100)+1
+    function aleatorio() {
+    
+        for (var indice=1; indice<=10; indice=indice+1) {
+            
+            document.getElementById("resultado").innerHTML= "Tús números aleatorios son " + resultado;
+            document.write(indice+"<br>");
+        }
+        //document.getElementById("resultado").innerHTML= "Tús números aleatorios son " + resultado;
+            }
+    </script>
+    
+
+</html>
