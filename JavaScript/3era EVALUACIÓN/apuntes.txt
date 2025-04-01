@@ -1,0 +1,8 @@
+Apuntes JavaScript Localstorage
+
+localStorage.setItem("lastname", "Smith");
+localStorage.getItem("lastname");
+localStorage.removeItem(key);
+localStorage.clear();
+
+add

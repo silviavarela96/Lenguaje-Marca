@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <input type="text" id="tarea" placeholder="Escribe una tarea">
+    <button onclick="agregarTarea()">Añadir</button>
+    <ul id="lista"></ul>
+
+
+    <script>
+        // Función para agregar una nueva tarea
+        function agregarTarea() {
+            let tarea = document.getElementById("tarea").value; // Obtener la tarea que se escribe
+
+            if (!tarea) return; // Detecta que el campo está vacío y no te permite agregarlo
+
+            agregarLista(tarea); // Mostrar la nueva tarea en la lista
+            document.getElementById("tarea").value = ""; // borra la tarea que se escribe cuando ya está agregada a la lista
+
+            localStorage.setItem('tarea', tarea); //Para guardar las tareas
+        }
+
+        // Función para agregar a la lista
+        function agregarLista(texto) {
+            let li = document.createElement("li");
+            li.textContent = texto;
+            document.getElementById("lista").appendChild(li); // Agregarlo a la lista en el HTML
+        }
+
+        //Funcion para cargar lo último 
+        //function agregarLista() {
+        //    const listaGuardada = localStorage.getItem('tarea');
+        //    if (listaGuardada) {
+        //        agregarTarea(listaGuardada);
+        //    }
+        //}
+    </script>
+</body>
+</html>
+
