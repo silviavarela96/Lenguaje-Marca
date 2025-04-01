@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reparte gastos</title>
+</head>
+<body>
+    <h1>Reparte gastos</h1>
+    <p>Introduce un número positivo:</p>
+    <input type="text" id="numero1">
+    <button onclick="anadir()">Añadir</button>
+
+    <p>Introduce un número entero positivo para dividir:</p>
+    <input type="text" id="numero2">
+    <button onclick="dividir()">Divide</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        let array = [];
+
+    function anadir(){
+        let numero1 = document.getElementById("numero1").value;
+        let resultado = document.getElementById("resultado");
+        array.push(numero1);
+        resultado.innerHTML = "Elementos en el array: " + array; 
+        
+        //let suma = array.reduce();
+        //resultado.innerHTML = "La suma total es: " + suma;
+
+            if (isNaN("numero1")) {
+                alert("Por favor, introduce un número positivo");
+                        }
+
+            else {
+            resultado.innerHTML = "Elementos en el array: " + array;
+            }
+        
+    } 
+
+    function dividir(){
+        let numero1 = parseFloat(document.getElementById("numero1").value);
+        let numero2 = parseFloat(document.getElementById("numero2").value);
+        let resultado = numero1 / numero2;
+        document.getElementById("resultado").innerHTML = "Cada persona debe de aportar " + resultado;
+
+            if (isNaN("numero2")) {
+                alert("Por favor, introduce un número positivo para poder dividir")
+            }
+
+            else {
+                document.getElementById("resultado").innerHTML = "Cada persona debe de aportar " + resultado;
+            }
+    }
+
+        
+    </script>
+</body>
+</html>
