@@ -30,7 +30,7 @@ header p {
     gap: 20px;
 }
 
-.card {
+.tarjetas {
     background: #FFFFFF;
     padding: 20px;
     border-radius: 10px;
@@ -39,14 +39,14 @@ header p {
     width: 200px;
 }
 
-.card img {
+.tarjetas img {
     width: 100%;
     height: 120px;
     object-fit: cover;
     border-radius: 5px;
 }
 
-.card .descripcion {
+.tarjetas .descripcion {
     font-size: 14px;
     font-style: italic;
     color: #555;

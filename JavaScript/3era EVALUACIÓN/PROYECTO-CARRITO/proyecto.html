@@ -12,7 +12,7 @@
 </header>
 <body>
     <div class="contenedor">
-        <div class="card">
+        <div class="tarjetas">
             <img src="avion.jpg" alt="Billete de Avión">
             <p>Billete de Avión</p>
             <p class="descripcion">Vuela alto y rápido a tu destino.</p>
@@ -22,7 +22,7 @@
                 <button class="aumentar">+</button>
             </div>
         </div>
-        <div class="card">
+        <div class="tarjetas">
             <img src="tren.jpg" alt="Billete de Tren">
             <p>Billete de Tren</p>
             <p class="descripcion">Disfruta del paisaje mientras viajas.</p>
@@ -32,7 +32,7 @@
                 <button class="aumentar">+</button>
             </div>
         </div>
-        <div class="card">
+        <div class="tarjetas">
             <img src="bus.jpg" alt="Billete de Bus">
             <p>Billete de Bus</p>
             <p class="descripcion">Económico e incómodo para todos.</p>
@@ -42,7 +42,7 @@
                 <button class="aumentar">+</button>
             </div>
         </div>
-        <div class="card">
+        <div class="tarjetas">
             <img src="barco.jpg" alt="Billete de Barco">
             <p>Billete de Barco</p>
             <p class="descripcion">No te olvides de la crema solar y la biodramina.</p>
@@ -69,7 +69,7 @@
 
         
         let total = 0;
-        let tarjetas = document.querySelectorAll('.card');
+        let tarjetas = document.querySelectorAll('.tarjetas');
 
         
         function actualizarTotal() {
@@ -94,30 +94,47 @@
             }
         }
 
-        // Añadir eventos a los botones de aumentar y disminuir
-        tarjetas.forEach(card => {
-            let aumentar = card.querySelector('.aumentar');
-            let disminuir = card.querySelector('.disminuir');
-            let cantidad = card.querySelector('.cantidad');
+        // funciones para que los botones me deje aumentar y disminuir
+        tarjetas.forEach(tarjetas => {
+            let aumentar = tarjetas.querySelector('.aumentar');
+            let disminuir = tarjetas.querySelector('.disminuir');
+            let cantidad = tarjetas.querySelector('.cantidad');
             
             //necesita saber que billete es para sumar o restar la cantidad
-            let tipoBillete = card.querySelector('p').textContent.toLowerCase().includes('avión') ? 'avion' :
-                                card.querySelector('p').textContent.toLowerCase().includes('tren') ? 'tren' :
-                                card.querySelector('p').textContent.toLowerCase().includes('bus') ? 'bus' : 'barco';
+            let tipoBillete = tarjetas.querySelector('p').textContent.toLowerCase().includes('avión') ? 'avion' :
+                                tarjetas.querySelector('p').textContent.toLowerCase().includes('tren') ? 'tren' :
+                                tarjetas.querySelector('p').textContent.toLowerCase().includes('bus') ? 'bus' : 'barco';
 
-            // Asignar los eventos
-            aumentar.addEventListener('click', () => aumentarCantidad(card, precios[tipoBillete]));
-            disminuir.addEventListener('click', () => disminuirCantidad(card, precios[tipoBillete]));
-        });
 
         //vaciar el carrito
         document.getElementById('vaciar').addEventListener('click', () => {
-            tarjetas.forEach(card => {
-                card.querySelector('.cantidad').textContent = '0';
+            tarjetas.forEach(tarjetas => {
+                tarjetas.querySelector('.cantidad').textContent = '0';
             });
             total = 0;
             actualizarTotal();
         });
+
+
+        //guardar la configuración del carrito
+        function guardarCarrito() {
+            let carrito = document.getElementById('carrito').value;
+            let configuracion = {
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+
+                aplicarConfiguracion();
+            };
+        }
+
+        // cargar lo guardado arriba
+        function cargarCarrito() {
+            let carrito = JSON.parse(localStorage.getItem('carrito'));
+            if (carrito) {
+                let configuracion = JSON.parse(localStorage.getItem('carrito')s);
+            }
+
+            window.onload = cargarCarrito;
+        }
     </script>
 </body>
 </html>
