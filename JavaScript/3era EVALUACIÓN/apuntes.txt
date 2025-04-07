@@ -1,8 +1,54 @@
-Apuntes JavaScript Localstorage
+------------>  Apuntes JavaScript  <------------
 
-localStorage.setItem("lastname", "Smith");
-localStorage.getItem("lastname");
-localStorage.removeItem(key);
-localStorage.clear();
+1. Variables
+    let (se puede cambiar)
+    const (no se puede cambiar)
 
-add
+2. Funciones
+
+    function nombre-funcion(nombre-variable) {
+        if {}
+        else {}
+    }
+
+3. Eventos
+    document.getElementById()
+
+
+------------>  Apuntes JavaScript Localstorage <------------
+
+
+1. Guardar datos
+    localStorage.getItem("");
+
+2.Leer datos
+    let nombre-variable = localStorage.getItem("");
+    console.log(nombre-variable); 
+
+3. Borrar datos
+    localStorage.removeItem("");
+
+4. Borrar todo
+    localStorage.clear();
+
+
+
+funciton guardar en localstorage() {
+    -----> UN OBJETO
+    let objeto = {x}
+    let objeto2 = {x,y,z}
+    
+    localStorage.setItem("nombre-variable", variable);  -----> para guardar en localStorage  
+    JSON.stringify(objeto)
+}
+
+
+funtion obtener localStorage() {
+    if (
+        let variable = localStorage.getItem("nombre_variable"); ---> guardar
+        let objeto = localStorage.getItem("objeto2") -----> obtener el objeto
+        JSON.parse(objeto2) ----> 
+    )
+}
+
+
