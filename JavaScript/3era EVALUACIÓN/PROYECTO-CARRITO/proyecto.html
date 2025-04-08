@@ -66,8 +66,7 @@
             bus: 30,
             barco: 80
         };
-
-        
+        var configuracion;
         let total = 0;
         let tarjetas = document.querySelectorAll('.tarjetas');
 
@@ -82,6 +81,7 @@
             cantidad.textContent = parseInt(cantidad.textContent) + 1;
             total += precio;
             actualizarTotal();
+            guardarCarrito();
         }
 
         // Función para disminuir la cantidad
@@ -91,50 +91,79 @@
                 cantidad.textContent = parseInt(cantidad.textContent) - 1;
                 total -= precio;
                 actualizarTotal();
+                guardarCarrito();
             }
         }
 
         // funciones para que los botones me deje aumentar y disminuir
-        tarjetas.forEach(tarjetas => {
-            let aumentar = tarjetas.querySelector('.aumentar');
-            let disminuir = tarjetas.querySelector('.disminuir');
-            let cantidad = tarjetas.querySelector('.cantidad');
+        tarjetas.forEach(tarjeta => {
+            let aumentar = tarjeta.querySelector('.aumentar');
+            let disminuir = tarjeta.querySelector('.disminuir');
+            let cantidad = tarjeta.querySelector('.cantidad');
+        
+             // Determinar el tipo de billete según el texto
+            let tipoTexto = tarjeta.querySelector('p').textContent.toLowerCase();
+            let tipoBillete = tipoTexto.includes('avión') ? 'avion' :
+                    tipoTexto.includes('tren') ? 'tren' :
+                    tipoTexto.includes('bus') ? 'bus' : 'barco';
+
+            aumentar.addEventListener('click', () => aumentarCantidad(tarjeta, precios[tipoBillete]));
+            disminuir.addEventListener('click', () => disminuirCantidad(tarjeta, precios[tipoBillete]));
+        });
             
-            //necesita saber que billete es para sumar o restar la cantidad
-            let tipoBillete = tarjetas.querySelector('p').textContent.toLowerCase().includes('avión') ? 'avion' :
-                                tarjetas.querySelector('p').textContent.toLowerCase().includes('tren') ? 'tren' :
-                                tarjetas.querySelector('p').textContent.toLowerCase().includes('bus') ? 'bus' : 'barco';
-
-
+        
         //vaciar el carrito
         document.getElementById('vaciar').addEventListener('click', () => {
-            tarjetas.forEach(tarjetas => {
-                tarjetas.querySelector('.cantidad').textContent = '0';
+            tarjetas.forEach(tarjeta => {
+                tarjeta.querySelector('.cantidad').textContent = '0';
             });
             total = 0;
             actualizarTotal();
+            guardarCarrito();
         });
 
 
-        //guardar la configuración del carrito
+        //guardar la configuración del carrito: tiene que ser igual que cargarCarrito para que detecte el tipo de billete
         function guardarCarrito() {
-            let carrito = document.getElementById('carrito').value;
-            let configuracion = {
-                localStorage.setItem('carrito', JSON.stringify(carrito));
+            let carrito = {};
 
-                aplicarConfiguracion();
-            };
+            tarjetas.forEach(tarjeta => {  //tengo que obtener la cantidad de cada billete y guardarlo como objeto
+                let tipoTexto = tarjeta.querySelector('p').textContent.toLowerCase();
+                let tipo = tipoTexto.includes('avión') ? 'avion' :
+                   tipoTexto.includes('tren') ? 'tren' :
+                   tipoTexto.includes('bus') ? 'bus' : 'barco';
+
+                let cantidad = parseInt(tarjeta.querySelector('.cantidad').textContent);
+                carrito[tipo] = cantidad;
+        });
+
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            
         }
 
         // cargar lo guardado arriba
         function cargarCarrito() {
             let carrito = JSON.parse(localStorage.getItem('carrito'));
             if (carrito) {
-                let configuracion = JSON.parse(localStorage.getItem('carrito'));
-            }
+                total = 0;
+                tarjetas.forEach(tarjeta => {
+                let tipoTexto = tarjeta.querySelector('p').textContent.toLowerCase();
+                let tipo = tipoTexto.includes('avión') ? 'avion' :
+                       tipoTexto.includes('tren') ? 'tren' :
+                       tipoTexto.includes('bus') ? 'bus' : 'barco';
 
-            window.onload = cargarCarrito;
+                let cantidad = carrito[tipo] || 0;
+                tarjeta.querySelector('.cantidad').textContent = cantidad;
+                total += cantidad * precios[tipo];
+            });
+            
+            actualizarTotal();
+            }
         }
+
+        
+        window.onload = cargarCarrito;
+        
     </script>
 </body>
 </html>
