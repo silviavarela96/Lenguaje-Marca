@@ -1,0 +1,67 @@
+/* Estilo para una calculadora básica de adivinar cifras */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f9;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.calculator {
+	background-color: #ffffff;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	padding: 20px;
+	width: 300px;
+	text-align: center;
+}
+
+.calculator h1 {
+	font-size: 24px;
+	color: #333333;
+	margin-bottom: 20px;
+}
+
+.calculator input[type="number"] {
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+.calculator button {
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.calculator button:hover {
+	background-color: #45a049;
+}
+
+.calculator .result {
+	margin-top: 20px;
+	font-size: 18px;
+	color: #555555;
+}
+
+.calculator .error {
+	color: red;
+	font-size: 14px;
+}
+	display: flex;
+	padding: 0;
+	margin: 0;
+	background-color: #f4f4f9;
+	font-family: Arial, sans-serif;
+body {/* Estilo para una calculadora básica de adivinar cifras */

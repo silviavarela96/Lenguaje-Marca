@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinar número</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        #boton1 {
+            display:none
+        }
+
+        #boton2 {
+            display:none
+        }
+    </style>
+</head>
+<body>
+    <h1>Adivina el número</h1>
+    <p>He pensado un número de 3 cifras...</p>
+    <input type="text" id="numero" placeholder="Introduce un número de 3 cifras">
+    <button id="boton1" onclick="iniciarJuego()">Jugar</button>
+    <button id="boton2" onclick="comprueba()">Comprueba</button>
+    <p id="resultado"></p>
+
+    
+    <script>
+        //tiempo <p id="numero"></p>
+        // let d = new date();
+        //let tiempo = d.getTime();
+        //document.getElementById("numero").innerHTML = tiempo;
+
+        //numeros aleatorios <p id="numAleatorio"></p>
+        //let aleatorios = Math.random(); //numero entre 0 y 1 (el 1 no está incluido)
+        //document.getElementById("numAleatorio").innerHTML = aleatorios;
+
+                            // el techo= Math.ceil(Math.random()*10) ---> numero entero superior
+                            // el suelo= Math.floor(Math.random()*10) ---> numero entero inferior
+        
+
+        var numAleatorio;
+        var inicio;
+
+        function generarNumeroAleatorio() {
+            numAleatorio = Math.ceil(Math.random()*10) + Math.ceil(Math.random()*10) + Math.ceil(Math.random()*10); 
+            document.getElementById("numAleatorio").innerHTML = "Número aleatorio generado: " + numAleatorio;
+        }
+
+        function iniciarJuego() {
+            inicio = new Date().getTime();
+            generarNumeroAleatorio();
+            document.getElementById("boton1").style.display = "none";
+            document.getElementById("boton2").style.display = "block";
+            document.getElementById("numero").style.display = "block";
+
+
+            
+            inicio = new Date().getTime();
+        }
+
+        function comprueba() {
+            let numero = document.getElementById("numero").value;
+            let resultado = document.getElementById("resultado");
+            let fin = new Date().getTime();
+            let tiempo = (fin - inicio) / 1000;
+
+            if (numero == numAleatorio) {
+                resultado.innerHTML = "¡Correcto! Has adivinado el número en " + tiempo + " segundos.";
+                document.getElementById("boton2").style.display = "none";
+                document.getElementById("boton1").style.display = "block";
+            } else {
+                resultado.innerHTML = "Incorrecto. Intenta de nuevo.";
+            }
+        }
+        function reiniciar() {
+            document.getElementById("boton1").style.display = "block";
+            document.getElementById("boton2").style.display = "none";
+            document.getElementById("numero").style.display = "none";
+            document.getElementById("resultado").innerHTML = "";
+        }
+    </script>
+</body>
+</html>
