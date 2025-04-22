@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+<h1>Ejercicio 1. Ocultar y mostrar</h1>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptas, hic vero velit eveniet blanditiis, a itaque repellat in veritatis, minus enim voluptates. Modi corporis labore dolore repudiandae, quae culpa.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto praesentium voluptate eum odio, enim alias recusandae inventore nesciunt libero ducimus porro sunt illo commodi! Id magni beatae eligendi dolorem qui!</p>
+<button id="ocultar">Ocultar</button>
+<button id="mostrar">Mostrar</button>
+
+<script>
+    $(document).ready(function() 
+        { 
+            $("#ocultar").click(function() 
+            {
+                $("p").hide(); 
+                $("h1").hide();
+            });
+
+            $("#mostrar").click(function() 
+            {
+                $("p").show(); 
+                $("h1").show();
+            });
+
+        });
+</script>
+</body>
+</html>

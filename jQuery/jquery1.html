@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery 1</title>
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <h1>Introducción a jQuery</h1>
+    <p id="segundo">Párrafo de ejemplo para iniciar en los ejercicios de Jquery. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam excepturi cupiditate odio delectus quidem eius mollitia debitis enim laudantium, voluptates commodi ea atque voluptatum aliquid, expedita at architecto animi quis!</p>
+    <p class="">Segundo párrafo de ejemplo. Lorem ipsum dolor sit amet consectetur adipisicing elit. At placeat temporibus expedita corrupti adipisci, deleniti sequi, commodi recusandae beatae fugiat rem magni quia tenetur asperiores cupiditate, odit totam odio porro!</p>
+    <p>Tercer párrafo de ejemplo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et perspiciatis modi est aliquam molestiae quam reprehenderit distinctio ducimus totam, eligendi deserunt. Sapiente voluptates culpa excepturi nesciunt dolores, rerum ex!</p>
+    <button id="boton1">Clic aquí</button>
+    <button id="boton2">Clic aquí</button>
+
+    <script>
+        $(document).ready(function() //carga el documento para poder ejecutar el jquery ---> ESTO SIEMPRE HAY QUE PONERLO
+        { 
+            $("#boton2").click(function() //cuando se hace clic en el segundo botón
+            {
+                $("#segundo").hide(); //oculta el párrafo 2
+            });
+
+            $("#boton1").click(function() //cuando se hace clic en el primer botón
+            {
+                $(this).hide(); //desaparece el boton1 ----> ¡¡¡El this no va entre comillas!!!
+            });
+
+        });
+    </script>
+</body>
+</html>

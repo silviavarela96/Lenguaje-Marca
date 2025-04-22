@@ -1,0 +1,16 @@
+AJAX = examen
+
+CDN ---> enlace externo 
+
+$("selector").acción()  -----> si el selector tiene id hay que poner ("#selector")
+
+
+jDocReady
+jDocReadyShort
+
+
+
+----FUNCIONES/ACCIONES----
+hide = ocultar, esconder
+show = mostrar
+this = desaparece el selector

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+<h1 id="encabezado">Ejercicio 4. Cambiar propiedad tamaño y color CSS</h1>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptas, hic vero velit eveniet blanditiis, a itaque repellat in veritatis, minus enim voluptates. Modi corporis labore dolore repudiandae, quae culpa.</p>
+<p class="pares">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto praesentium voluptate eum odio, enim alias recusandae inventore nesciunt libero ducimus porro sunt illo commodi! Id magni beatae eligendi dolorem qui!</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, blanditiis officia. Illum maxime provident eaque sapiente adipisci. Aut, libero! Id quasi nemo repellat perferendis ipsam dolore illum alias, autem mollitia?</p>
+<button id="grande">Más grande y verde</button>
+<button id="pequeño">Más pequeño y amarillo</button>
+
+<script>
+    $(document).ready(function() 
+            { 
+                $("#pequeño").click(function() 
+            {
+                    $("#encabezado").css("font-size", "50%");  //si lo quiero en una sola línea ({color:yellow,font-size:50%})
+                    $(".pares").css("font-size", "50%");
+                    $("#encabezado").css("color", "yellow");
+                    $(".pares").css("color", "yellow"); 
+        
+            });
+
+                $("#grande").click(function() 
+            {
+                    $("#encabezado").css("font-size", "200%");
+                    $(".pares").css("font-size", "200%");
+                    $("#encabezado").css("color", "green");
+                    $(".pares").css("color", "green"); 
+    
+            });
+    
+            });
+</script>
+</body>
+</html>

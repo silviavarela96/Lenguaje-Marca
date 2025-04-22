@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <h1>Ejercicio 6. Cambiar color de fondo</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p>
+    <img src="https://picsum.photos/200">
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam nam modi enim odit quod voluptate quis quas recusandae deserunt quibusdam aperiam eaque tempora consequuntur, doloribus consequatur totam commodi! Repudiandae, pariatur!</p>
+
+    <h2>Titulo 2</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod accusantium optio excepturi sapiente totam nisi natus omnis. Tenetur, facere quasi repellendus quibusdam aut provident saepe odit id quidem laudantium nihil!</p>
+    <img src="https://picsum.photos/200/300">
+    <a href="https://www.google.com">Google</a>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet expedita voluptatem odio molestias optio! Repellat quia consectetur distinctio adipisci nostrum voluptates ipsum quisquam omnis in dicta dolores, repellendus non assumenda.</p>
+
+    <table border="1">
+        <tr>
+            <th>Titulos</th>
+            <th>Párrafos</th>
+            <th>Imágenes</th>
+            <th>Enlaces</th>
+        </tr>
+        <tr>
+            <td id="nh1"></td>
+            <td id="np"></td>
+            <td id="nimg"></td>
+            <td id="ne"></td>
+        </tr>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            $("#nh1").text($("h1").length);
+            $("#np").text($("p").length);
+            $("#nimg").text($("img").length);
+            $("#ne").text($("a").length);
+        });
+    </script>
+</body>
+</html>
