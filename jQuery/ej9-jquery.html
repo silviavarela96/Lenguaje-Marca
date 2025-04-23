@@ -9,9 +9,9 @@
 <body>
     <h1>Lista de enlaces</h1>
     <ul>
-        <li><a id="w3school" href="https://www.w3schools.com">W3school</a></li>
-        <li><a id="wiki" href="https://www.wikipedia.com">Wikipedia</a></li>
-        <li><a id="git" href="https://www.github.com">GitHub</a></li>
+        <li><a id="enlace1" href="" >Enlace 1</a><img src="" width="50"></li>
+        <li><a id="enlace2" href="">Enlace 2</a><img src="" width="50"></li>
+        <li><a id="enlace3" href="">Enlace 3</a><img src="" width="50"></li>
     </ul>
 </body>
 </html>
@@ -19,18 +19,9 @@
 <script>
     $(document).ready(function() {
         
-        $("#w3school").click(function() {
-            $(this).show(img src="pez-rojo.png");
+        $("img").each(function() {
+            $(this).attr("src", "pez-bonito.png");
         });
 
-        $("#wiki").click(function() {
-            $(this).show(img src="pez-azul.png");
-            
-        });
-
-        $("#git").click(function() {
-            $(this).show(img src="pez-bonito.png");
-        });
-        
     });
 </script>

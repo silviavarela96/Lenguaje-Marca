@@ -14,3 +14,10 @@ jDocReadyShort
 hide = ocultar, esconder
 show = mostrar
 this = desaparece el selector
+
+jQuery HTML
+get = obtener el contenido de un elemento con id 
+    .text() ---> muestra texto
+    .html() ---> muestra texto+etiquetas
+    .val() ---> muestra lo escrito en la caja de texto
+    .attr() ---> muestra enlace
