@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <h1>Lista de enlaces</h1>
+    <ul>
+        <li><a id="w3school" href="https://www.w3schools.com">W3school</a></li>
+        <li><a id="wiki" href="https://www.wikipedia.com">Wikipedia</a></li>
+        <li><a id="git" href="https://www.github.com">GitHub</a></li>
+    </ul>
+</body>
+</html>
+
+<script>
+    $(document).ready(function() {
+        
+        $("#w3school").click(function() {
+            $(this).show(img src="pez-rojo.png");
+        });
+
+        $("#wiki").click(function() {
+            $(this).show(img src="pez-azul.png");
+            
+        });
+
+        $("#git").click(function() {
+            $(this).show(img src="pez-bonito.png");
+        });
+        
+    });
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12</title>
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <h1>Ejercicio 12: Ocultar y mostrar texto</h1>
+    <div id="caja" style="width: 200px; height: 200px; border: 3px solid rgb(255, 152, 250); text-align: center; margin: auto; padding: 50px;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quae beatae iure consectetur assumenda perferendis hic nisi iusto velit numquam porro minus saepe eligendi corrupti, fugiat sint ullam ipsa expedita!
+    </div>
+    <button id="ocultar">Ocultar texto</button>
+    <button id="mostrar">Mostrar texto</button>
+    
+
+    <script>
+        $(document).ready(function() {
+            $("#ocultar").click(function() 
+            {
+                $("div").hide();
+            });
+
+            $("#mostrar").click(function() 
+            {
+                $("div").show(); 
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <h1>Hola caracola</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptas voluptates minima eos autem explicabo laborum totam nulla quas vel excepturi error consectetur veniam facilis ut, nobis magnam in corporis!</p>
+    <img src="https://picsum.photos/200/300" id="imagen">
+    <br>
+    <button id="boton1">Obtener imagen</button>
+    <button id="boton2">Obtener encabezado</button>
+    <button id="boton3">Obtener párrafo</button>
+</body>
+</html>
+
+<script>
+    $(document).ready(function() {
+        $("#boton1").click(function() {
+            alert($("#imagen").attr("src"));
+        });
+        $("#boton2").click(function() {
+            alert($("h1").html());
+        });
+        $("#boton3").click(function() {
+            alert($("p").html());
+        });
+    });
+</script>
