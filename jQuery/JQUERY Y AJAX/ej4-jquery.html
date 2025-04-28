@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 2 </title>
+  <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+
+<div id="parrafo1"></div>
+<div id="parrafo2"></div>
+
+<script>
+  $(document).ready(function() {
+    $("#parrafo1").load("1.txt");  //carga en el párrafo el contenido del archivo txt
+    $("#parrafo2").load("2.html .contenedor1");  //carga en el párrafo lo que esté dentro del contenedor
+});
+</script>
+
+</body>
+</html>
