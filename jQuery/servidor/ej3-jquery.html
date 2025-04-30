@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Petición paralela con jQuery</title>
+  <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+
+<p id="respuesta"></p>
+
+<script>
+  $(document).ready(function() {
+
+    $.when(
+      $.get("1.json"),   //obtenes el contenido de los dos archivos
+      $.get("2.json")
+    ).then(function(data1, data2) {   //con data añadimos las respuestas json
+      let nombreCompleto = data1[0].nombre + " " + data1[0].apellido;   //coge las respuestas de data1
+      let rol = data2[0].rol;           //coge las respuestas de data2
+      $("#respuesta").text(nombreCompleto + " tiene el rol de " + rol);
+    });
+  });
+</script>
+
+</body>
+</html>

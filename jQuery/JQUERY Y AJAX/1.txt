@@ -1,2 +1,0 @@
-Ejemplo para mostrar con el ejercicio 4.
-Se mostrará este contenido en el párrafo 1.
