@@ -44,8 +44,9 @@ $(document).ready(function() {
         $feedback.html('&nbsp;').removeClass('text-red-500 text-green-500');
 
         // Generar números aleatorios (ej: entre 1 y 10)
-        num1 = Math.floor(Math.random() *10) //****************************
-        num2 = Math.floor(Math.random() *10) //****************************
+        num1 = Math.floor(Math.random() * 10) + 1;
+        num2 = Math.floor(Math.random() * 10) + 1;
+        
 
         // Seleccionar operador aleatorio (+, -, *)
         const operators = ['+', '-', '*'];
@@ -111,7 +112,7 @@ $(document).ready(function() {
 
         if (!isNaN(userAnswer) && userAnswer === correctAnswer) {
             // Respuesta Correcta
-            // *****Aumentamos en 1 la puntuación actual
+            currentScore++; // *****Aumentamos en 1 la puntuación actual
             $currentScoreDisplay.text(currentScore);
             $feedback.text('¡Correcto!').removeClass('text-red-500').addClass('text-green-500');
             // Esperar un poco antes de la siguiente pregunta
@@ -128,7 +129,7 @@ $(document).ready(function() {
      */
     function handleIncorrectAnswer(message) {
          $feedback.html(`${message} La respuesta era ${correctAnswer}.`).removeClass('text-green-500').addClass('text-red-500');
-          // *******Finaliza partida actual
+         endGame(); // *******Finaliza partida actual
     }
 
 
@@ -142,7 +143,7 @@ $(document).ready(function() {
         // Comprobar y actualizar récord
         if (currentScore > highScore) {
             highScore = currentScore;
-            // *****Guardar nuevo récord
+            localStorage.setItem('mathChallengeHighScore', highScore); // *****Guardar nuevo récord
             $highScoreDisplay.text(highScore);
             $feedback.append(' ¡Nuevo récord!'); // Añadir mensaje de récord
         }
