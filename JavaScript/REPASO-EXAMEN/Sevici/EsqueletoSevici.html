@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Información de Sevici</title>
+    <link rel="stylesheet" href="sevici.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Enlazar código por aquí -->
+</head>
+<body>
+    <div class="container">
+        <h1>Información de Sevici</h1>
+        <div class="buttons">
+            <button id="numStations">Calcular número de estaciones disponibles</button>
+            <button id="totalBikes">Mostrar total de bicicletas</button>
+            <button id="totalFree">Mostrar total de sitios libres</button>
+        </div>
+        <div id="result"></div>
+    </div>
+    <!-- Código de jQuery debajo-->
+    <script>
+          $(document).ready(function() {
+        let estaciones = [];
+
+        $.getJSON("https://api.citybik.es/v2/networks/sevici", function(data) {   //carga los datos de la API
+            estaciones = data.network.stations;
+        });
+
+        $('#numStations').click(function() {   //botón estaciones
+            $('#result').text("Número de estaciones: " + estaciones.length);
+        });
+
+         $('#totalBikes').click(function() {   //botón bicicletas
+            let totalBicis = estaciones.reduce((suma, estacion) => {
+                let bikes = parseInt(estacion.free_bikes);   //con parseInt se convierte el dato a un número
+                return suma + (isNaN(bikes) ? 0 : bikes);  //si no hay nada disponible sale 0 en vez de NaN
+            }, 0);
+            $('#result').text("Bicicletas disponibles: " + totalBicis);
+        });
+
+        $('#totalFree').click(function() {   //botón sitios
+            let totalLibres = estaciones.reduce((suma, estacion) => {
+                let libres = parseInt(estacion.empty_slots);
+                return suma + (isNaN(libres) ? 0 : libres);
+            }, 0);
+            $('#result').text("Sitios libres: " + totalLibres);
+        });
+    });
+    </script>
+</body>
+</html>
