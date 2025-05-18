@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Círculos</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .circulo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgb(218, 154, 255);
+            position: absolute;
+        }
+        .puntuacion {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="puntuacion"></div>
+    <div id="record"></div>
+    
+    <script>
+        let puntuacion = 0;
+        let tiempoRestante = 30; //duración del juego
+        let intervalo;
+
+        
+        function mostrarRecord() {  
+            const record = localStorage.getItem('recordCirculos') || 0;
+            $('#record').text('Récord: ' + record);
+        }
+
+        function crearCirculo() {
+            const circulo = $('<div class="circulo"></div>');
+            const x = Math.random() * (window.innerWidth - 50);
+            const y = Math.random() * (window.innerHeight - 50);
+            circulo.css({
+                left: x + 'px',
+                top: y + 'px'
+            });
+
+            circulo.click(function() {
+                puntuacion++;
+                $('#puntuacion').text('Puntuación: ' + puntuacion);
+                $(this).remove();
+                crearCirculo();
+            });
+
+            $('body').append(circulo);
+        }
+
+        function iniciarJuego() {
+            puntuacion = 0;
+            tiempoRestante = 30;
+            $('#puntuacion').text('Puntuación: ' + puntuacion);
+            crearCirculo();
+            intervalo = setInterval(function() {
+                tiempoRestante--;
+                if (tiempoRestante <= 0) {
+                    clearInterval(intervalo);
+                    $('.circulo').remove();
+                    
+                    let record = localStorage.getItem('recordCirculos') || 0;   //guarda el récord
+                    if (puntuacion > record) {
+                        localStorage.setItem('recordCirculos', puntuacion);
+                        alert('¡Nuevo récord! Tu puntuación es: ' + puntuacion);
+                    } else {
+                        alert('Juego terminado! Tu puntuación es: ' + puntuacion);
+                    }
+                    mostrarRecord();
+                }
+            }, 1000);  //se ejecuta la funcion cada 1seg
+        }
+
+        $(document).ready(function() {
+            mostrarRecord();
+            iniciarJuego();
+        });
+        
+        $(window).on('resize', function() {    //se recolocan los circulos en posiciones aleatorias
+            $('.circulo').each(function() {
+                const x = Math.random() * (window.innerWidth - 50);
+                const y = Math.random() * (window.innerHeight - 50);
+                $(this).css({
+                    left: x + 'px',
+                    top: y + 'px'
+                });
+            });
+        });
+       
+    </script>
+</body>
+</html>
