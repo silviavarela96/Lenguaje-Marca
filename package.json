@@ -1,0 +1,22 @@
+{
+  "name": "lenguaje-marca",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silviavarela96/Lenguaje-Marca.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/silviavarela96/Lenguaje-Marca/issues"
+  },
+  "homepage": "https://github.com/silviavarela96/Lenguaje-Marca#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
