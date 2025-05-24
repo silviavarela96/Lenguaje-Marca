@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardar un Array</title>
+</head>
+<body>
+    <h1>Lista</h1>
+    <input type="text" id="entrada" placeholder="Escribe una tarea">
+    <button onclick="agregar()">agregar</button>
+    <p id="tareas"></p>
+
+    <script>
+        let ArrayTareas = []; //creamos un array para que se guarden y almacen todas las tareas que añadimos
+
+        function agregar() {
+            let entrada = document.getElementById('entrada').value;
+            ArrayTareas.push(entrada); //nos permite intoducir la tarea en el array
+            if (entrada!=''){
+                localStorage.setItem('tareas', JSON.stringify(ArrayTareas));  //construye a cadena
+                document.getElementById('tareas').innerHTML = ArrayTareas;
+            }
+        }
+
+        function cargaListaTareas(){
+            let ArrayTareas = JSON.parse(localStorage.getItem('tareas')); //JSON construye una cadena con todas las tareas
+            if(tareas !=null){
+                document.getElementById('tareas').innerHTML = ArrayTareas;
+            }
+
+            else {
+                document.getElementById('tareas').innerHTML = 'No hay tareas';
+            }
+        }
+    window.onload = cargaListaTareas; //Mira si en almacenamiento hay tareas
+    </script>
+</body>
+</html>
