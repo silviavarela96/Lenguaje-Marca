@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios aleatorios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Aquí deberíamos enlazar a jQuery (usa URL alojada en Internet)-->
+    <style>
+        body {
+            background-color: rgb(240, 239, 239);
+        }
+
+        #flex {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .circle {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+        <div id='flex' class='card'>
+            <div class="card-header">
+                <h3 class="card-title">Generador de usuarios</h3>
+            </div>
+            <div class="card-body">
+                <div class='usuario'>
+                    <div id="varios-usuarios"></div>    <!----añado para que me muestre los 5 usuarios españoles en pantalla-->
+                    <img src='' class='circle'>
+                    <p class='fullname'></p>
+                    <p class='username'></p>
+                    <p class='email'></p>
+                    <p class='city'></p>
+                    <div class="card-footer">
+                        <button id="btn-generico" class='btn btn-primary'>Genérico</button>
+                        <button id="btn-espanol" class='btn btn-primary'>Español</button>
+                        <button id="btn-varios" class='btn btn-primary'>5 Españoles</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        /* Aquí deberías escribir tu código de jQuery */
+        
+    //mostrar un usuario y contenido de la información 
+    function mostrarUsuario(user) {
+        $('.circle').attr('src', user.picture.large);
+        $('.fullname').text(user.name.first + ' ' + user.name.last);
+        $('.username').text('@' + user.login.username);
+        $('.email').text(user.email);
+        $('.city').text(user.location.city);
+    }
+
+    //botón generico: para que muestre un usuario aleatorio
+    $('#btn-generico').click(function () {
+         $('#varios-usuarios').html(''); //hay que añadir esta línea para que al pulsar el botón generico se borre la lista de 5 usuarios españoles
+        $.ajax({       // Llamada AJAX a la API
+            url: 'https://randomuser.me/api/',    //dirección API
+            dataType: 'json',
+            success: function (data) {    //cuando tiene los datos ejecuta la función
+                mostrarUsuario(data.results[0]);
+            }
+        });
+    });
+
+    //usuario español
+    $('#btn-espanol').click(function () {
+        $('#varios-usuarios').html(''); //hay que añadir esta línea para que al pulsar el botón generico se borre la lista de 5 usuarios españoles
+        
+        $.ajax({
+            url: 'https://randomuser.me/api/?nat=es',  //igual que antes pero con el parámetro nat=es para que sea español
+            dataType: 'json',
+            success: function (data) {
+                mostrarUsuario(data.results[0]);
+            }
+        });
+    });
+
+    //5 usuarios españoles
+     $('#btn-varios').click(function () {
+        //necesito poner estas líneas para borrar el usuario que se muestra en pantalla
+        $('.circle').attr('src', '');
+        $('.fullname').text('');
+        $('.username').text('');
+        $('.email').text('');
+        $('.city').text('');
+
+        $.getJSON('https://randomuser.me/api/?results=5&nat=es', function (data) { //hay que poner de nuevo el parámetro nat=es para que sean españoles
+            $('#varios-usuarios').html('<h5>Lista de 5 usuarios españoles:</h5><ul></ul>');   // añade título y la lista de 5
+            data.results.forEach(function (user) {
+                $('#varios-usuarios ul').append( //añade cada usuario a la lista con todos los datos
+                    `<li>
+                        <img src="multiple.png" width="30" style="vertical-align: middle; margin-right: 8px;">
+                        ${user.name.first} ${user.name.last} - ${user.email} - ${user.location.city} - ${user.login.username}  
+                    </li>`
+                );
+            });
+        });
+    });
+
+    </script>
+</body>
+
+</html>
