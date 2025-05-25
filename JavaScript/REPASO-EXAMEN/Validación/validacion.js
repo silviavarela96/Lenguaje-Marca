@@ -1,63 +1,132 @@
-//console.log("validacion.js cargado");
+document.getElementById('formularioRegistro').addEventListener('submit', function(evento) {
+    evento.preventDefault(); // Esto es para que no se envíe
 
-window.addEventListener('DOMContentLoaded', function () {
-    const formulario = document.getElementById('formularioRegistro');
+        let nombre = document.getElementById('nombre').value;
+        let apellidos = document.getElementById('apellidos').value;
+        let telefono = document.getElementById('telefono').value();
+        let email = document.getElementById('email').value();
+        let contrasena1 = document.getElementById('contrasena1').value;
+        let contrasena2 = document.getElementById('contrasena2').value;
+        let aceptarTerminos = document.getElementById('aceptarTerminos').checked;
+        let esValido = true;
 
-    formulario.addEventListener('submit', function (e) {
-        e.preventDefault(); // Evita que se envíe el formulario
+    // Validación del nombre completo
+    if (!validarNombre(nombre)) {
+      document.getElementById('error-nombre').style.visibility = 'visible';
+      esValido = false;
+    } else {
+      document.getElementById('error-nombre').style.visibility = 'hidden';
+    }
 
-        // Limpiar mensajes anteriores
-        document.querySelectorAll('.error').forEach(el => el.textContent = '');
+    //validar apellidos
+    if (!validarApellidos(apellidos)) {
+      document.getElementById('error-apellidos').style.visibility = 'visible';
+      esValido = false;
+    }
+    else {
+      document.getElementById('error-apellidos').style.visibility = 'hidden';  //error en rojo
+    }
 
-        let valido = true;
+    // Validación del teléfono
+    if (!validarTelefono(telefono)) {
+      document.getElementById('error-telefono').style.visibility = 'visible';
+      esValido = false;
+    }
+    else {          
+        document.getElementById('error-telefono').style.visibility = 'hidden'; //error en rojo
+    }
 
-        const nombre = document.getElementById('nombre').value.trim();
-        const apellidos = document.getElementById('apellidos').value.trim();
-        const telefono = document.getElementById('telefono').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const contrasena1 = document.getElementById('contrasena1').value;
-        const contrasena2 = document.getElementById('contrasena2').value;
-        const aceptarTerminos = document.getElementById('aceptarTerminos').checked;
+    // Validación del email
+    if (!validarEmail(email)) {
+        document.getElementById('error-email').style.visibility = 'visible';
+        esValido = false;
+    }
+    else {
+        document.getElementById('error-email').style.visibility = 'hidden'; //error en rojo
+    }
 
-        if (nombre === '') {
-            document.getElementById('error-nombre').textContent = 'El nombre es obligatorio.';
-            valido = false;
-        }
+    // Validación de la contraseña
+    if (!validarContrasena(contrasena1)) {
+        document.getElementById('error-contrasena1').style.visibility = 'visible';
+        esValido = false;
+    }
+    else {
+        document.getElementById('error-contrasena1').style.visibility = 'hidden'; //error en rojo        
+    }
 
-        if (apellidos === '') {
-            document.getElementById('error-apellidos').textContent = 'Los apellidos son obligatorios.';
-            valido = false;
-        }
+    // Validación de la confirmación de contraseña
+    if (!validarContrasena(contrasena2) || contrasena1 !== contrasena2) {
+        document.getElementById('error-contrasena2').style.visibility = 'visible';
+        esValido = false;
+    }
+    else {  
+        document.getElementById('error-contrasena2').style.visibility = 'hidden'; //error en rojo
+    }
 
-        if (!/^\d{9}$/.test(telefono)) {
-            document.getElementById('error-telefono').textContent = 'Introduce un teléfono de 9 dígitos.';
-            valido = false;
-        }
+    // Validación de términos y condiciones
+    if (!validarTerminos(aceptarTerminos)) {
+      document.getElementById('error-terminos').style.visibility = 'visible';
+      esValido = false;
+    } else {
+      document.getElementById('error-terminos').style.visibility = 'hidden';
+    }
 
-        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-            document.getElementById('error-email').textContent = 'Correo electrónico inválido.';
-            valido = false;
-        }
+    if (esValido) {
+      alert('Formulario enviado con éxito.');
+    }
 
-        if (contrasena1.length < 6) {
-            document.getElementById('error-contrasena1').textContent = 'Mínimo 6 caracteres.';
-            valido = false;
-        }
+    // Función para validar el nombre
+    function validarNombre(nombre) {
+    let valido = false;
+    if (nombre!="") // Ha escrito algo...
+    valido = true;
+    return valido;
+  }
 
-        if (contrasena1 !== contrasena2) {
-            document.getElementById('error-contrasena2').textContent = 'Las contraseñas no coinciden.';
-            valido = false;
-        }
+  // Función para validar los apellidos
+  function validarApellidos(apellidos) {
+    let valido = false;
+    if (apellidos!="") // Ha escrito algo...
+    valido = true;
+    return valido;
+  }
 
-        if (!aceptarTerminos) {
-            document.getElementById('error-terminos').textContent = 'Debes aceptar los términos.';
-            valido = false;
-        }
+  // Función para validar el teléfono
+  function validarTelefono(telefono) {
+    let regex = /^\d{9}$/; // Expresión regular para un número de teléfono español de 9 dígitos
+    let valido = false;
+    if (regex.test(telefono)) {
+      valido = true;
+    }
+    return valido;
+  }
+  
+  // Función para validar el correo electrónico
+  function validarCorreoElectronico(email) {
+    let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let valido = false;
+    if (regex.test(email)) {
+      valido = true;
+    }
+    return valido;
+  }
 
-        if (valido) {
-            alert('✅ Registro completado con éxito');
-            // formulario.submit(); // si quieres enviarlo realmente
-        }
-    });
+  // Función para validar la contraseña
+  function validarContrasena(contrasena) {
+    let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/; // Al menos 8 caracteres, una mayúscula, una minúscula y un número
+    let valido = false;
+    if (regex.test(contrasena)) {
+      valido = true;
+    }
+    return valido;
+  }
+
+  // Función para validar los términos y condiciones
+  function validarTerminos(aceptarTerminos) {
+    let valido = false;
+    if (terminos) { // Si se ha marcado la casilla de términos y condiciones
+      valido = true;
+    }
+    return valido;
+  }
 });
-
